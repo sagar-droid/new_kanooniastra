@@ -22,7 +22,7 @@ const TeamMember = ({ name, image, designation, email, id }: any) => {
       </div>
       <div className="p-4">
         <h3 className="text-xl font-semibold">{name}</h3>
-        <p className="text-gray-600">{designation}</p>
+        <p className="text-gray-600 text-lg">{designation}</p>
         <a href={`mailto:${email}`} className="text-blue-500 hover:underline">
           {email}
         </a>
@@ -63,7 +63,7 @@ const OurTeam = () => {
           className="flex flex-col gap-2 text-5xl border-primary border-l-4 pl-4"
           data-aos="fade-right"
         >
-          Our Team <span className="text-base">Meet our team members</span>
+          Our Team <span className="text-lg">Meet our team members</span>
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

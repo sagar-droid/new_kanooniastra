@@ -21,7 +21,7 @@ const JoinUs = () => {
           data-aos="fade-up"
           data-aos-once="true"
         >
-          <p className=" text-xl">Wanna become part of us?</p>
+          <p className=" text-2xl">Wanna become part of us?</p>
           <h2 className=" text-5xl font-semibold ">Join Us</h2>
           <Button title="Get Started" link="#" />
         </div>
