@@ -15,7 +15,7 @@ const About = () => {
           Building Lasting Relationships
         </h2>
         <p
-          className=""
+          className=" text-xl"
           data-aos="fade-up"
           data-aos-once="true"
           data-aos-delay="500"
@@ -30,10 +30,8 @@ const About = () => {
           proactive legal counsel, trust in Kanooni Astra to be your steadfast
           partner every step of the way.
         </p>
-        <div>
-          <Link href="/aboutus" data-aos="fade-up" data-aos-once="true">
-            <Button title="About Us" />
-          </Link>
+        <div data-aos="fade-up" data-aos-once="true">
+          <Button title="About Us" link="/aboutus" />
         </div>
       </div>
       <div data-aos-once="true" data-aos="fade-left">

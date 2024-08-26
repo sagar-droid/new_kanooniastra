@@ -53,10 +53,11 @@ const KanooniAstraValues = () => {
         <h2
           className="text-5xl font-bold text-center text-gray-800"
           data-aos="fade-up"
-          data-aos-once="true">
+          data-aos-once="true"
+        >
           Our Values
         </h2>
-        <p data-aos="fade-up" data-aos-once="true">
+        <p data-aos="fade-up" data-aos-once="true" className=" text-xl">
           At Kanooni Astra, our values form the cornerstone of everything we do.
           They guide our actions, shape our decisions, and define who we are as
           a firm. Our commitment to these core principles ensures that we uphold
@@ -80,13 +81,14 @@ const KanooniAstraValues = () => {
             className={cn(
               " p-4 rounded-lg shadow-md flex gap-6 flex-col",
               card.className
-            )}>
+            )}
+          >
             <div className=" flex items-center gap-4">
               <h2 className="text-xl text-primary font-semibold mb-2">
                 {card.title}
               </h2>
             </div>
-            <p>{card.description}</p>
+            <p className=" text-lg">{card.description}</p>
           </div>
         ))}
       </div>

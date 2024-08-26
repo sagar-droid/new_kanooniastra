@@ -16,7 +16,7 @@ const HeroSection = () => {
           <div className=" flex items-center text-lg justify-between w-full">
             <MenuItems />
 
-            <Button title="Contact Us" />
+            <Button title="Contact Us" link="/contactus" />
           </div>
         </article>
       </section>
@@ -26,7 +26,8 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
-          playsInline>
+          playsInline
+        >
           <source src="/video.mp4" type="video/mp4" className=" w-full" />
           Your browser does not support the video tag.
         </video>

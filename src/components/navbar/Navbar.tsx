@@ -1,24 +1,32 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Button from "../common/Button";
+import MenuItems from "./menuItems/MenuItems";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
   return (
-    <section className=" bg-primary absolute top-0 flex gap-20 text-white items-center">
-      <div>
-        <Image src="/logo.svg" alt="logo" width={100} height={100} />
-      </div>
-      <div className=" flex items-center text-lg px-10 justify-between w-full">
-        <ul className=" flex gap-6 ">
-          <li>Services</li>
-          <li>Solutions</li>
-          <li>Company</li>
-        </ul>
-        <div className=" p-2 bg-">
-          <Button title="Contact Us" />
-        </div>
-      </div>
-    </section>
+    <>
+      {pathname !== "/" && (
+        <section className=" bg-primary z-10 w-full">
+          <article className=" container py-4 flex gap-20 text-white items-center">
+            <div>
+              <Link href="/">
+                <Image src="/logo.svg" alt="logo" width={100} height={100} />
+              </Link>
+            </div>
+            <div className=" flex items-center text-lg justify-between w-full">
+              <MenuItems />
+
+              <Button title="Contact Us" link="/contactus" />
+            </div>
+          </article>
+        </section>
+      )}
+    </>
   );
 };
 

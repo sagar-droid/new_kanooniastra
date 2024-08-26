@@ -23,7 +23,7 @@ const JoinUs = () => {
         >
           <p className=" text-xl">Wanna become part of us?</p>
           <h2 className=" text-5xl font-semibold ">Join Us</h2>
-          <Button title="Get Started" />
+          <Button title="Get Started" link="#" />
         </div>
       </article>
     </section>

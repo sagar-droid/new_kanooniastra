@@ -134,7 +134,7 @@ const OurServices = () => {
                   {service.title}
                 </h3>
                 {service.items.length > 0 && (
-                  <ul className="text-gray-600 text-sm list-disc list-inside">
+                  <ul className="text-gray-600 text-lg list-disc list-outside ml-4">
                     {service.items.slice(0, 3).map((item, itemIndex) => (
                       <li key={itemIndex}>{item}</li>
                     ))}
@@ -146,7 +146,7 @@ const OurServices = () => {
           ))}
         </div>
         <div className="flex justify-center items-center mt-8">
-          <Button title="View All" />
+          <Button title="View All" link="#" />
         </div>
       </article>
     </section>

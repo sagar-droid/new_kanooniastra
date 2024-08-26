@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={barlow.className}>
         <Provider />
+        <Navbar />
         {children}
         <Footer />
       </body>
