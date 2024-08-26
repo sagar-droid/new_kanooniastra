@@ -10,23 +10,25 @@ const About = () => {
         <h2
           className=" text-5xl font-semibold"
           data-aos="fade-up"
-          data-aos-once="true">
+          data-aos-once="true"
+        >
           Building Lasting Relationships
         </h2>
         <p
           className=""
           data-aos="fade-up"
           data-aos-once="true"
-          data-aos-delay="500">
-          At Kanooni Astra, we don't just represent clients; we build lasting
-          relationships based on trust, integrity, and transparency. Our goal is
-          not just to meet expectations but to exceed them, leaving a lasting
-          impact that extends far beyond the courtroom. <br />
+          data-aos-delay="500"
+        >
+          At Kanooni Astra, we don&apos;t just represent clients; we build
+          lasting relationships based on trust, integrity, and transparency. Our
+          goal is not just to meet expectations but to exceed them, leaving a
+          lasting impact that extends far beyond the courtroom. <br />
           <br />
           Join us on our journey to redefine the standards of legal excellence.
-          Whether you're facing a complex legal challenge or seeking proactive
-          legal counsel, trust in Kanooni Astra to be your steadfast partner
-          every step of the way.
+          Whether you&apos;re facing a complex legal challenge or seeking
+          proactive legal counsel, trust in Kanooni Astra to be your steadfast
+          partner every step of the way.
         </p>
         <div>
           <Link href="/aboutus" data-aos="fade-up" data-aos-once="true">
