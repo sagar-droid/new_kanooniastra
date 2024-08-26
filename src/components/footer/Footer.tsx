@@ -8,13 +8,13 @@ import { LiaLinkedin } from "react-icons/lia";
 const Footer = () => {
   return (
     <section className=" bg-primary py-20">
-      <Image
+      {/* <Image
         src={"/logo.svg"}
         alt="logo"
         width={100}
         height={100}
         className=" mx-5 md:mx-10 xl:mx-10"
-      />
+      /> */}
       <article className=" container text-white flex gap-10">
         <div>
           <ul className=" flex flex-col text-xl mt-10 gap-4">

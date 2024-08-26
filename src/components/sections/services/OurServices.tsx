@@ -108,16 +108,27 @@ const OurServices = () => {
         className="absolute inset-0 bg-black z-0"
         style={{
           clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
-        }}></div>
+        }}
+      ></div>
 
       {/* Content */}
       <article className="container relative z-10">
-        <h2 className="text-5xl font-bold text-center text-gray-800 mb-8">
+        <h2
+          className="text-5xl font-bold text-center text-gray-800 mb-8"
+          data-aos="fade-up"
+          data-aos-once="true"
+        >
           Our Services
         </h2>
         <div className="flex flex-wrap justify-center gap-6">
           {services.slice(0, 6).map((service, index) => (
-            <Link key={index} href={service.link} className="block">
+            <Link
+              key={index}
+              href={service.link}
+              className="block"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               <div className="bg-white rounded-lg w-[300px] shadow-md p-6 h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <h3 className="text-xl font-semibold text-blue-600 mb-2">
                   {service.title}

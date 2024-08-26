@@ -4,19 +4,25 @@ import React from "react";
 
 const JoinUs = () => {
   return (
-    <section className=" ">
-      <article className="flex flex-col  md:flex-row gap-20 md:gap-32">
+    <section className=" bg-primary">
+      <article className="container flex flex-col justify-center md:flex-row gap-20 md:gap-32">
         <div className=" bg-primary">
           <Image
             src="/laptop_mockup.png"
             alt="laptop_mockup"
             width={700}
             height={700}
+            data-aos="fade-right"
+            data-aaos-once="true"
           />
         </div>
-        <div className=" flex flex-col justify-center items-center gap-10 text-center pr-20">
+        <div
+          className=" flex flex-col justify-center items-center text-white gap-10 text-center pr-20"
+          data-aos="fade-up"
+          data-aos-once="true"
+        >
           <p className=" text-xl">Wanna become part of us?</p>
-          <h2 className=" text-5xl font-semibold text-primary">Join Us</h2>
+          <h2 className=" text-5xl font-semibold ">Join Us</h2>
           <Button title="Get Started" />
         </div>
       </article>
