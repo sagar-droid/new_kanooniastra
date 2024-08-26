@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import daisyui from "daisyui";
 
 const config: Config = {
   content: [
@@ -13,8 +14,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        primary: "var(--primary-color)",
+      },
+      fontFamily: {
+        outline: ["Londrina Outline", "sans-serif"],
+      },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
 };
 export default config;

@@ -1,0 +1,56 @@
+import Button from "@/components/common/Button";
+import MenuItems from "@/components/navbar/menuItems/MenuItems";
+import Navbar from "@/components/navbar/Navbar";
+import Image from "next/image";
+import React from "react";
+
+const HeroSection = () => {
+  return (
+    <section className="relative w-full h-screen overflow-hidden">
+      {/* <Navbar /> */}
+      <section className=" bg-transparent z-10 w-full absolute top-0">
+        <article className=" container py-10 flex gap-20 text-white items-center">
+          <div>
+            <Image src="/logo.svg" alt="logo" width={100} height={100} />
+          </div>
+          <div className=" flex items-center text-lg justify-between w-full">
+            <MenuItems />
+
+            <Button title="Contact Us" />
+          </div>
+        </article>
+      </section>
+      <section>
+        <video
+          className="absolute z-0 top-0 left-0 w-full h-[100vh] object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline>
+          <source src="/video.mp4" type="video/mp4" className=" w-full" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
+      <article className="relative h-screen">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-[120px] uppercase text-primary font-bold">
+            Kaanoni
+            <span className=" text-white">Astra</span>
+          </h1>
+        </div>
+        <div className="absolute flex text-2xl items-center justify-center bottom-0 text-white p-8">
+          <p>
+            Beacon of{" "}
+            <span className=" text-primary italic">legal excellence</span>{" "}
+            forged by <br />
+            <span className=" text-primary italic">passion</span> and{" "}
+            <span className="text-primary italic"> commitment</span>
+          </p>
+        </div>
+      </article>
+    </section>
+  );
+};
+
+export default HeroSection;
