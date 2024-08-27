@@ -18,6 +18,7 @@ const OurPartners = () => {
       <div className="flex animate-marquee">
         {partners.concat(partners).map((partner) => (
           <Image
+            unoptimized
             key={`${partner.id}-${Math.random()}`}
             src={partner.logo}
             alt={partner.name}
