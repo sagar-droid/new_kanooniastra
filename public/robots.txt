@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kanooniastra.com
+
+# Sitemaps
+Sitemap: https://kanooniastra.com/sitemap.xml
