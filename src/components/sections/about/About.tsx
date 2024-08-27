@@ -36,6 +36,7 @@ const About = () => {
       </div>
       <div data-aos-once="true" data-aos="fade-left">
         <Image
+          unoptimized
           src="/about.jpg"
           alt="about"
           width={500}
