@@ -6,6 +6,10 @@ const nextConfig = {
     EMAIL_PASS: process.env.EMAIL_PASS,
   },
   domains: ["kanooniastra.com"],
+  images: {
+    unoptimized: true,
+    domains: ["kanooniastra.com"],
+  },
 };
 
 export default nextConfig;

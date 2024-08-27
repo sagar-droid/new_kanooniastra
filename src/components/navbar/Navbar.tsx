@@ -15,13 +15,7 @@ const Navbar = () => {
           <article className=" container py-4 flex gap-20 text-white items-center">
             <div>
               <Link href="/">
-                <Image
-                  src="/logo.svg"
-                  unoptimized
-                  alt="logo"
-                  width={100}
-                  height={100}
-                />
+                <Image src="/logo.svg" alt="logo" width={100} height={100} />
               </Link>
             </div>
             <div className=" flex items-center text-lg justify-between w-full">

@@ -8,7 +8,6 @@ const JoinUs = () => {
       <article className="container flex flex-col justify-center md:flex-row gap-20 md:gap-32">
         <div className=" bg-primary">
           <Image
-            unoptimized
             src="/laptop_mockup.png"
             alt="laptop_mockup"
             width={700}

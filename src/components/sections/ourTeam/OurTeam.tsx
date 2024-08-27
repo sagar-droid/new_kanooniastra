@@ -12,7 +12,6 @@ const TeamMember = ({ name, image, designation, email, id }: any) => {
     >
       <div className="relative w-full h-48 overflow-hidden">
         <Image
-          unoptimized
           src={image}
           alt={name}
           layout="fill"
