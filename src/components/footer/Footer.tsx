@@ -90,8 +90,9 @@ const Footer = () => {
       <article
         className=" flex pt-24 font-bold text-white tracking-[1rem] md:tracking-[3rem] justify-center items-center md:text-3xl lg:text-7xl"
         data-aos="fade-down"
-        data-aos-once="true"
+        // data-aos-once="true"
         data-aso-delay="500"
+        data-aos-offset="-100"
       >
         <h2>KANOONIASTRA</h2>
       </article>

@@ -1,5 +1,6 @@
 import Button from "@/components/common/Button";
 import MenuItems from "@/components/navbar/menuItems/MenuItems";
+import MobileMenu from "@/components/navbar/mobileMenu/MobileMenu";
 import Navbar from "@/components/navbar/Navbar";
 import Image from "next/image";
 import React from "react";
@@ -13,10 +14,13 @@ const HeroSection = () => {
           <div>
             <Image src="/logo.svg" alt="logo" width={100} height={100} />
           </div>
-          <div className=" flex items-center text-lg justify-between w-full">
+          <div className=" hidden md:flex items-center text-lg justify-between w-full">
             <MenuItems />
 
             <Button title="Contact Us" link="/contactus" />
+          </div>
+          <div>
+            <MobileMenu />
           </div>
         </article>
       </section>

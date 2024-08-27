@@ -14,9 +14,8 @@ const TeamMember = ({ name, image, designation, email, id }: any) => {
         <Image
           src={image}
           alt={name}
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center top"
+          fill
+          style={{ objectFit: "cover", objectPosition: "center top" }}
           className="rounded-t-lg"
         />
       </div>

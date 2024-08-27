@@ -5,6 +5,7 @@ import Button from "../common/Button";
 import MenuItems from "./menuItems/MenuItems";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import MobileMenu from "./mobileMenu/MobileMenu";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -12,7 +13,7 @@ const Navbar = () => {
     <>
       {pathname !== "/" && (
         <section className=" bg-primary z-10 w-full">
-          <article className=" container py-4 flex gap-20 text-white items-center">
+          <article className=" container py-4 hidden  md:flex gap-20 text-white items-center">
             <div>
               <Link href="/">
                 <Image src="/logo.svg" alt="logo" width={100} height={100} />
@@ -24,6 +25,9 @@ const Navbar = () => {
               <Button title="Contact Us" link="/contactus" />
             </div>
           </article>
+          <div>
+            <MobileMenu />
+          </div>
         </section>
       )}
     </>
