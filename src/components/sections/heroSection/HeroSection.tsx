@@ -39,7 +39,7 @@ const HeroSection = () => {
       <article className="relative h-screen">
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl lg:text-[120px] uppercase text-primary font-bold">
-            Kanoni
+            Kanooni
             <span className=" text-white">Astra</span>
           </h1>
         </div>
