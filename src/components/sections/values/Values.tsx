@@ -8,42 +8,42 @@ const KanooniAstraValues = () => {
       title: "Integrity",
       description:
         "We conduct ourselves with honesty, transparency, and ethical conduct at all times. Integrity is the bedrock of our relationships with clients, colleagues, and the community, and we remain steadfast in upholding the trust placed in us.",
-      className: "col-span-1 row-span-2 ",
+      className: "col-span-3 md:col-span-1 row-span-2 ",
     },
     {
       id: 2,
       title: "Excellence",
       description:
         "We are relentless in our pursuit of excellence, striving to deliver superior outcomes and innovative solutions to our clients' legal challenges. Our dedication to continuous improvement and learning ensures that we stay at the forefront of legal innovation.",
-      className: "col-span-2 row-span-1 ",
+      className: "col-span-3 md:col-span-2 row-span-1 ",
     },
     {
       id: 3,
       title: "Client-Centricity",
       description:
         "Our clients are at the heart of everything we do. We listen attentively to their needs, understand their objectives, and tailor our services to meet their unique requirements. Building lasting relationships based on trust, respect, and empathy is paramount to us.",
-      className: "col-span-1 row-span-1 ",
+      className: "col-span-3 md:col-span-1 row-span-1 ",
     },
     {
       id: 4,
       title: "Collaboration",
       description:
         "We believe in the power of teamwork and collaboration. By harnessing the collective expertise and diverse perspectives of our team members, we deliver comprehensive and holistic solutions that exceed our clients' expectations.",
-      className: "col-span-1 row-span-1",
+      className: "col-span-3 md:col-span-1 row-span-1",
     },
     {
       id: 5,
       title: "Social Responsibility",
       description:
         "We are committed to making a positive impact on society and giving back to the communities we serve. Through pro bono work, community service initiatives, and advocacy for social justice, we strive to be agents of positive change in the world.",
-      className: "col-span-1 row-span-2 ",
+      className: "col-span-3 md:col-span-1 row-span-2 ",
     },
     {
       id: 6,
       title: "Innovation",
       description:
         "We embrace creativity, innovation, and forward thinking in everything we do. By staying abreast of emerging legal trends, leveraging technology, and adopting progressive approaches, we continuously seek to redefine the boundaries of legal excellence.",
-      className: "col-span-2 row-span-2 ",
+      className: "col-span-3 md:col-span-2 row-span-2 ",
     },
   ];
 

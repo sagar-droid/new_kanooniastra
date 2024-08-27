@@ -4,7 +4,7 @@ import React from "react";
 
 const JoinUs = () => {
   return (
-    <section className=" bg-primary">
+    <section className=" bg-primary py-10">
       <article className="container flex flex-col justify-center md:flex-row gap-20 md:gap-32">
         <div className=" bg-primary">
           <Image
@@ -17,9 +17,9 @@ const JoinUs = () => {
           />
         </div>
         <div
-          className=" flex flex-col justify-center items-center text-white gap-10 text-center pr-20"
+          className=" flex flex-col justify-center items-center text-white gap-10 text-center lg:pr-20"
           data-aos="fade-up"
-          data-aos-once="true"
+          // data-aos-once="true"
         >
           <p className=" text-2xl">Wanna become part of us?</p>
           <h2 className=" text-5xl font-semibold ">Join Us</h2>

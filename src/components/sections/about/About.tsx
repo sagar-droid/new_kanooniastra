@@ -5,7 +5,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className=" container py-24 flex gap-6">
+    <section className=" container py-24 flex flex-col lg:flex-row gap-6">
       <div className=" flex flex-col flex-1 gap-6">
         <h2
           className=" text-5xl font-semibold"

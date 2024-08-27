@@ -15,7 +15,7 @@ const Footer = () => {
         height={100}
         className=" mx-5 md:mx-10 xl:mx-10"
       /> */}
-      <article className=" container justify-evenly text-white flex gap-10">
+      <article className=" container justify-evenly text-white flex flex-col md:flex-row gap-10">
         <div>
           <ul className=" flex flex-col text-xl mt-10 gap-4">
             <li>
@@ -61,32 +61,34 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div>
-          <ul className=" flex flex-col text-xl mt-10 gap-4">
-            <li className=" hover:text-black">
-              <Link href="/">Home</Link>
-            </li>
-            <li className=" hover:text-black">
-              <Link href="#">Services</Link>
-            </li>
-            <li className=" hover:text-black">
-              <Link href="#">Solutions</Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul className=" flex flex-col text-xl mt-10 gap-4">
-            <li className=" hover:text-black">
-              <Link href="#">About Us</Link>
-            </li>
-            <li className=" hover:text-black">
-              <Link href="#">Company</Link>
-            </li>
-          </ul>
+        <div className=" flex gap-10 justify-between">
+          <div>
+            <ul className=" flex flex-col text-xl mt-10 gap-4">
+              <li className=" hover:text-black">
+                <Link href="/">Home</Link>
+              </li>
+              <li className=" hover:text-black">
+                <Link href="#">Services</Link>
+              </li>
+              <li className=" hover:text-black">
+                <Link href="#">Solutions</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul className=" flex flex-col text-xl mt-10 gap-4">
+              <li className=" hover:text-black">
+                <Link href="#">About Us</Link>
+              </li>
+              <li className=" hover:text-black">
+                <Link href="#">Company</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </article>
       <article
-        className=" flex pt-24 font-bold text-white tracking-[3rem] justify-center items-center text-7xl"
+        className=" flex pt-24 font-bold text-white tracking-[1rem] md:tracking-[3rem] justify-center items-center md:text-3xl lg:text-7xl"
         data-aos="fade-down"
         data-aos-once="true"
         data-aso-delay="500"
