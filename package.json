@@ -2,6 +2,7 @@
   "name": "new_project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://kanooniastra.com",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
