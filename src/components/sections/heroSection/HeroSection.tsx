@@ -12,7 +12,7 @@ const HeroSection = () => {
       <section className=" bg-transparent z-10 w-full absolute top-0">
         <article className=" container py-10 hidden md:flex gap-20 text-white items-center">
           <div>
-            <Image src="/logo.svg" alt="logo" width={100} height={100} />
+            <Image src="/logo.png" alt="logo" width={100} height={100} />
           </div>
           <div className=" items-center text-lg flex justify-between w-full">
             <MenuItems />
@@ -30,8 +30,7 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
-          playsInline
-        >
+          playsInline>
           <source src="/video.mp4" type="video/mp4" className=" w-full" />
           Your browser does not support the video tag.
         </video>
@@ -40,7 +39,7 @@ const HeroSection = () => {
       <article className="relative h-screen">
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-5xl lg:text-[120px] uppercase text-primary font-bold">
-            Kaanoni
+            Kanoni
             <span className=" text-white">Astra</span>
           </h1>
         </div>

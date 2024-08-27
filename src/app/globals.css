@@ -6,7 +6,9 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --primary-color: #cd001a;
+  --primary-color: #ff0000;
+  /* --primary-color: #cd001a; */
+
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }

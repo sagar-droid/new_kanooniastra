@@ -8,8 +8,7 @@ const TeamMember = ({ name, image, designation, email, id }: any) => {
       className="bg-white rounded-lg shadow-md overflow-hidden"
       data-aos="fade-up"
       data-aos-once="true"
-      data-aos-delay={id * 100 + 1000}
-    >
+      data-aos-delay={id * 100 + 100}>
       <div className="relative w-full h-48 overflow-hidden">
         <Image
           src={image}
@@ -60,8 +59,7 @@ const OurTeam = () => {
       <div className="mb-12">
         <h2
           className="flex flex-col gap-2 text-5xl border-primary border-l-4 pl-4"
-          data-aos="fade-right"
-        >
+          data-aos="fade-right">
           Our Team <span className="text-lg">Meet our team members</span>
         </h2>
       </div>
