@@ -11,10 +11,10 @@ const Careers = () => {
           </h1>
           <p className=" text-xl ">
             At Kanooni Astra, we believe in nurturing talent, fostering growth,
-            and empowering individuals to reach their full potential. If you're
-            passionate about law, driven by a desire to make a difference, and
-            eager to embark on a rewarding career journey, we invite you to
-            explore opportunities to join our dynamic team.
+            and empowering individuals to reach their full potential. If
+            you&apos;re passionate about law, driven by a desire to make a
+            difference, and eager to embark on a rewarding career journey, we
+            invite you to explore opportunities to join our dynamic team.
           </p>
         </div>
         <div>
