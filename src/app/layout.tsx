@@ -13,8 +13,16 @@ const barlow = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Kanooniastra",
+  title: "Kanooniastra | Law Firm",
   description: "redefine the standards of legal excellence",
+  openGraph: {
+    title: "Kanooniastra | Law Firm",
+    description: "redefine the standards of legal excellence",
+    url: "https://kanooniastra.com",
+    type: "website",
+    locale: "en-US",
+    siteName: "Kanooniastra",
+  },
 };
 
 export default function RootLayout({
