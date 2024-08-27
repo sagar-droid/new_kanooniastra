@@ -14,13 +14,13 @@ const HeroSection = () => {
           <div>
             <Image src="/logo.svg" alt="logo" width={100} height={100} />
           </div>
-          <div className=" hidden md:flex items-center text-lg justify-between w-full">
+          <div className=" items-center text-lg flex justify-between w-full">
             <MenuItems />
 
             <Button title="Contact Us" link="/contactus" />
           </div>
         </article>
-        <div>
+        <div className=" z-20">
           <MobileMenu />
         </div>
       </section>
@@ -39,7 +39,7 @@ const HeroSection = () => {
 
       <article className="relative h-screen">
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-[120px] uppercase text-primary font-bold">
+          <h1 className="text-5xl lg:text-[120px] uppercase text-primary font-bold">
             Kaanoni
             <span className=" text-white">Astra</span>
           </h1>

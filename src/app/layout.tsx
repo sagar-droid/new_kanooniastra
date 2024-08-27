@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={barlow.className}>
+      <body className={`${barlow.className} overflow-x-hidden`}>
         <Provider />
         <Navbar />
         {children}

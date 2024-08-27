@@ -15,19 +15,19 @@ const MobileMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  if (pathname === "/") {
-    return null;
-  }
+  const bgColor = pathname === "/" ? "bg-transparent" : "bg-primary";
 
   return (
-    <div className="md:hidden">
-      <div className="flex justify-between items-center p-4 bg-primary text-white">
+    <div className="md:hidden z-[9999999999999]">
+      <div
+        className={`flex justify-between items-center p-4 ${bgColor} text-white`}
+      >
         <Link href="/">
           <Image src="/logo.svg" alt="logo" width={80} height={80} />
         </Link>
         <motion.button
           onClick={toggleMenu}
-          className="text-3xl fixed top-8 right-4 z-50"
+          className="text-3xl  z-50"
           whileTap={{ scale: 0.95 }}
         >
           {isOpen ? "×" : "☰"}
