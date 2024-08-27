@@ -10,7 +10,7 @@ const HeroSection = () => {
     <section className="relative w-full h-screen overflow-hidden">
       {/* <Navbar /> */}
       <section className=" bg-transparent z-10 w-full absolute top-0">
-        <article className=" container py-10 flex gap-20 text-white items-center">
+        <article className=" container py-10 hidden md:flex gap-20 text-white items-center">
           <div>
             <Image src="/logo.svg" alt="logo" width={100} height={100} />
           </div>
@@ -19,10 +19,10 @@ const HeroSection = () => {
 
             <Button title="Contact Us" link="/contactus" />
           </div>
-          <div>
-            <MobileMenu />
-          </div>
         </article>
+        <div>
+          <MobileMenu />
+        </div>
       </section>
       <section>
         <video
