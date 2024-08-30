@@ -2,9 +2,10 @@
   "name": "new_project",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "homepage": "https://kanooniastra.com",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
     "postbuild": "next-sitemap --config next-sitemap.config.js",

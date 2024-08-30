@@ -1,6 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
-module.exports = {
+const config = {
   siteUrl: "https://kanooniastra.com",
-  generateRobotsTxt: true, // (optional)
+  generateRobotsTxt: true,
   outDir: "./out",
 };
+
+export default config;
