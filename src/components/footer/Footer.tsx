@@ -36,8 +36,7 @@ const Footer = () => {
               Email:{" "}
               <a
                 href="mailto:kanooniastra@gmail.com"
-                className=" hover:underline"
-              >
+                className=" hover:underline">
                 kanooniastra@gmail.com
               </a>
             </li>
@@ -68,21 +67,21 @@ const Footer = () => {
                 <Link href="/">Home</Link>
               </li>
               <li className=" hover:text-black">
-                <Link href="#">Services</Link>
+                <Link href="/our-services">Services</Link>
               </li>
-              <li className=" hover:text-black">
+              {/* <li className=" hover:text-black">
                 <Link href="#">Solutions</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div>
             <ul className=" flex flex-col text-xl mt-10 gap-4">
               <li className=" hover:text-black">
-                <Link href="#">About Us</Link>
+                <Link href="/aboutus">About Us</Link>
               </li>
-              <li className=" hover:text-black">
-                <Link href="#">Company</Link>
-              </li>
+              {/* <li className=" hover:text-black">
+                <Link href="">Company</Link>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -92,8 +91,7 @@ const Footer = () => {
         data-aos="fade-down"
         // data-aos-once="true"
         data-aso-delay="500"
-        data-aos-offset="-100"
-      >
+        data-aos-offset="-100">
         <h2>KANOONIASTRA</h2>
       </article>
       <div className="flex justify-center items-center text-white mt-10">

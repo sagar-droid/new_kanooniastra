@@ -301,7 +301,7 @@ const OurServices = () => {
           ))}
         </div>
         <div className="flex justify-center items-center mt-8">
-          <Button title="View All" link="#" />
+          <Button title="View All" link="/our-services" />
         </div>
       </article>
     </section>

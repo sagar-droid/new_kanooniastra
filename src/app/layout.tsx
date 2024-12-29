@@ -8,7 +8,7 @@ import Footer from "@/components/footer/Footer";
 
 // const inter = Inter({ subsets: ["latin"] });
 const barlow = Barlow_Condensed({
-  weight: ["400"], // You can add more weights if needed, e.g. ['400', '700']
+  weight: ["400"],
   subsets: ["latin"],
 });
 
