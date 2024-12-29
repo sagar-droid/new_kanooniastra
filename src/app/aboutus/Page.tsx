@@ -24,18 +24,19 @@ const AboutusPage = () => {
             accomplish every task within the given time frame.
             <br />
             <br /> But beyond our professional prowess, what truly sets us apart
-            is our unwavering commitment to our clients' needs. We understand
-            that each legal matter is unique, and we approach every case with a
-            personalized touch, tailoring our strategies to achieve the best
-            possible outcome.
+            is our unwavering commitment to our clients&apos; needs. We
+            understand that each legal matter is unique, and we approach every
+            case with a personalized touch, tailoring our strategies to achieve
+            the best possible outcome.
             <br />
-            <br /> At Kanooni Astra, we don't just represent clients; we build
-            lasting relationships based on trust, integrity, and transparency.
-            Our goal is not just to meet expectations but to exceed them,
-            leaving a lasting impact that extends far beyond the courtroom.
+            <br /> At Kanooni Astra, we don&apos;t just represent clients; we
+            build lasting relationships based on trust, integrity, and
+            transparency. Our goal is not just to meet expectations but to
+            exceed them, leaving a lasting impact that extends far beyond the
+            courtroom.
             <br />
             <br /> Join us on our journey to redefine the standards of legal
-            excellence. Whether you're facing a complex legal challenge or
+            excellence. Whether you&apos;re facing a complex legal challenge or
             seeking proactive legal counsel, trust in Kanooni Astra to be your
             steadfast partner every step of the way.
           </p>
