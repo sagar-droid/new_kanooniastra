@@ -8,7 +8,7 @@ const AboutusPage = () => {
         <h1 className=" text-[124px] text-primary">About Us</h1>
       </div>
       <div className=" flex flex-col md:flex-row gap-6">
-        <div className="flex-1 flex">
+        <div className="flex-1 flex text-lg">
           <p>
             Welcome to Kanooni Astra, a beacon of legal excellence forged by
             passion and commitment. Founded on December 5th, 2022, by Adv.

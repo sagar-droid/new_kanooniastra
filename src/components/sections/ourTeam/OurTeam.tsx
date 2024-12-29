@@ -69,7 +69,7 @@ const OurTeam = () => {
         ))}
       </div>
       <div className=" mt-8" data-aos="fade-up" data-aos-once="true">
-        <Button title="Meet Our Team" link="#" />
+        <Button title="Meet Our Team" link="/ourteam" />
       </div>
     </section>
   );

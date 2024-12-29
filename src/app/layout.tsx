@@ -5,6 +5,7 @@ import { Barlow_Condensed } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import Provider from "./provider";
 import Footer from "@/components/footer/Footer";
+import NextTopLoader from "nextjs-toploader";
 
 // const inter = Inter({ subsets: ["latin"] });
 const barlow = Barlow_Condensed({
@@ -33,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${barlow.className} overflow-x-hidden`}>
+        <NextTopLoader height={4} color="#FF0000" showSpinner={false} />
         <Provider />
         <Navbar />
         {children}
