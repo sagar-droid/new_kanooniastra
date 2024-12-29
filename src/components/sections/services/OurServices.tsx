@@ -1,102 +1,260 @@
+// import Button from "@/components/common/Button";
+// import Link from "next/link";
+// import React from "react";
+
+// const services = [
+//   {
+//     title: "Family Law",
+//     items: [
+//       "Partition",
+//       "Divorce",
+//       "Marriage Registration",
+//       "Adoption",
+//       "Child Custody",
+//     ],
+//     link: "/our-services/family-law",
+//   },
+//   {
+//     title: "Property Law",
+//     items: ["Partition", "Registration of Property", "Transfer of Property"],
+//     link: "/our-services/property-law",
+//   },
+//   {
+//     title: "Corporate Law",
+//     items: [
+//       "Company Registration",
+//       "Company Compliances",
+//       "Industry Registration",
+//       "Small and Cottage Industry Registration",
+//     ],
+//     link: "/our-services/corporate-law",
+//   },
+//   {
+//     title: "Labour Law",
+//     items: ["Labour related issues"],
+//     link: "/our-services/labour-law",
+//   },
+//   {
+//     title: "Hotel Sector",
+//     items: [
+//       "Approval from Department of Tourism",
+//       "Policy Drafting for company",
+//       "Approval from different departments",
+//     ],
+//     link: "/our-services/hotel-sector",
+//   },
+//   {
+//     title: "Intellectual Property",
+//     items: [
+//       "Copyright Claim",
+//       "Trademark Registration",
+//       "IP case drafting and litigation",
+//       "Patent Registration",
+//     ],
+//     link: "/our-services/intellectual-property",
+//   },
+//   {
+//     title: "Banking Sector",
+//     items: ["Cheque Bounce", "Black Listing"],
+//     link: "/our-services/banking-sector",
+//   },
+//   {
+//     title: "Taxation Laws",
+//     items: [
+//       "Registration of VAT/PAN",
+//       "Tax assessment Cases",
+//       "Writ on Taxation issues",
+//     ],
+//     link: "/our-services/taxation-laws",
+//   },
+//   {
+//     title: "NGO/INGO Registration",
+//     items: [],
+//     link: "/our-services/ngo-ingo-registration",
+//   },
+//   {
+//     title: "Foreign Direct Investment",
+//     items: [
+//       "Registration",
+//       "Approval",
+//       "Liquidation",
+//       "Visa approvals",
+//       "Approval for Technology Transfer Agreement",
+//     ],
+//     link: "/our-services/foreign-direct-investment",
+//   },
+//   {
+//     title: "Dispute Resolution",
+//     items: [],
+//     link: "/our-services/dispute-resolution",
+//   },
+//   {
+//     title: "Litigation",
+//     items: [],
+//     link: "/our-services/litigation",
+//   },
+//   {
+//     title: "Criminal Law",
+//     items: [],
+//     link: "/our-services/criminal-law",
+//   },
+// ];
+
+// const OurServices = () => {
+//   return (
+//     <section className="py-12 relative overflow-x-hidden w-full">
+//       {/* Clipped background */}
+//       <div
+//         className="absolute inset-0 bg-black z-0 w-full"
+//         style={{
+//           clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
+//         }}
+//       ></div>
+
+//       {/* Content */}
+//       <article className="container relative z-10 mx-auto px-4">
+//         <h2
+//           className="text-5xl font-bold text-center text-gray-800 mb-8"
+//           data-aos="fade-up"
+//           data-aos-once="true"
+//         >
+//           Our Services
+//         </h2>
+//         <div className="flex flex-wrap justify-center gap-6 w-full">
+//           {services.slice(0, 6).map((service, index) => (
+//             <Link
+//               key={index}
+//               href={service.link}
+//               className="block w-full sm:w-auto"
+//               data-aos="fade-up"
+//               data-aos-delay={index * 100}
+//             >
+//               <div className="bg-white rounded-lg w-full sm:w-[300px] shadow-md p-6 h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
+//                 <h3 className="text-xl font-semibold text-blue-600 mb-2">
+//                   {service.title}
+//                 </h3>
+//                 {service.items.length > 0 && (
+//                   <ul className="text-gray-600 text-lg list-disc list-outside ml-4">
+//                     {service.items.slice(0, 3).map((item, itemIndex) => (
+//                       <li key={itemIndex}>{item}</li>
+//                     ))}
+//                     {service.items.length > 3 && <li>...</li>}
+//                   </ul>
+//                 )}
+//               </div>
+//             </Link>
+//           ))}
+//         </div>
+//         <div className="flex justify-center items-center mt-8">
+//           <Button title="View All" link="#" />
+//         </div>
+//       </article>
+//     </section>
+//   );
+// };
+
+// export default OurServices;
 import Button from "@/components/common/Button";
 import Link from "next/link";
 import React from "react";
 
 const services = [
   {
-    title: "Family Law",
+    title: "Foreign Direct Investment",
     items: [
-      "Partition",
-      "Divorce",
-      "Marriage Registration",
-      "Adoption",
-      "Child Custody",
+      "Providing legal advice and assistance on foreign direct investment regulations and compliance",
     ],
-    link: "/our-services/family-law",
-  },
-  {
-    title: "Property Law",
-    items: ["Partition", "Registration of Property", "Transfer of Property"],
-    link: "/our-services/property-law",
-  },
-  {
-    title: "Corporate Law",
-    items: [
-      "Company Registration",
-      "Company Compliances",
-      "Industry Registration",
-      "Small and Cottage Industry Registration",
-    ],
-    link: "/our-services/corporate-law",
-  },
-  {
-    title: "Labour Law",
-    items: ["Labour related issues"],
-    link: "/our-services/labour-law",
-  },
-  {
-    title: "Hotel Sector",
-    items: [
-      "Approval from Department of Tourism",
-      "Policy Drafting for company",
-      "Approval from different departments",
-    ],
-    link: "/our-services/hotel-sector",
+    link: "/our-services#foreign-direct-investment",
   },
   {
     title: "Intellectual Property",
     items: [
-      "Copyright Claim",
-      "Trademark Registration",
-      "IP case drafting and litigation",
-      "Patent Registration",
+      "Advising on the protection of intellectual property rights (IPR)",
+      "Handling registration and renewal of patents, designs, and trademarks",
+      "Drafting and reviewing franchise agreements and technology transfer agreements (TTA)",
     ],
-    link: "/our-services/intellectual-property",
+    link: "/our-services#intellectual-property",
   },
+
   {
-    title: "Banking Sector",
-    items: ["Cheque Bounce", "Black Listing"],
-    link: "/our-services/banking-sector",
-  },
-  {
-    title: "Taxation Laws",
+    title: "Family Law",
     items: [
-      "Registration of VAT/PAN",
-      "Tax assessment Cases",
-      "Writ on Taxation issues",
+      "Divorce proceedings and legal representation",
+      "Marriage-related legal services",
+      "Child custody matters",
+      "Adoption procedures",
+      "Property division in family disputes",
     ],
-    link: "/our-services/taxation-laws",
+    link: "/our-services#family-law",
   },
   {
-    title: "NGO/INGO Registration",
-    items: [],
-    link: "/our-services/ngo-ingo-registration",
-  },
-  {
-    title: "Foreign Direct Investment",
+    title: "TMT Law (Technology, Media, and Telecommunications)",
     items: [
-      "Registration",
-      "Approval",
-      "Liquidation",
-      "Visa approvals",
-      "Approval for Technology Transfer Agreement",
+      "Addressing legal issues related to technology, media, and telecommunications sectors",
     ],
-    link: "/our-services/foreign-direct-investment",
+    link: "/our-services#tmt-law",
   },
   {
-    title: "Dispute Resolution",
-    items: [],
-    link: "/our-services/dispute-resolution",
+    title: "Property Law",
+    items: [
+      "Handling land deeds and property transactions",
+      "Property partition services",
+    ],
+    link: "/our-services#property-law",
+  },
+  {
+    title: "Corporate Law",
+    items: [
+      "Ensuring company compliance with regulations",
+      "Assisting with company incorporation",
+      "Providing startup counseling",
+      "Handling merger and acquisition transactions",
+    ],
+    link: "/our-services#corporate-law",
   },
   {
     title: "Litigation",
-    items: [],
-    link: "/our-services/litigation",
+    items: [
+      "Representing clients in various courts, including labor courts, revenue tribunals, district courts, high courts, and the Supreme Court",
+    ],
+    link: "/our-services#litigation",
+  },
+  {
+    title: "Legality Maintenance Programs",
+    items: [
+      "Formulating by-laws for companies",
+      "Drafting rules and regulations for local government offices",
+    ],
+    link: "/our-services#legality-maintenance-programs",
+  },
+  {
+    title: "Intellectual Property Investigation",
+    items: [
+      "Conducting investigations related to intellectual property rights, including anti-counterfeiting, copyright infringement, patent infringement, unauthorized use of trademarks, product copying, brand imitation, parallel trade, and remedies for breaches",
+    ],
+    link: "/our-services#intellectual-property-investigation",
   },
   {
     title: "Criminal Law",
-    items: [],
-    link: "/our-services/criminal-law",
+    items: ["Offering legal representation and advice in criminal law matters"],
+    link: "/our-services#criminal-law",
+  },
+  {
+    title: "Dispute Resolution",
+    items: [
+      "Managing labor and employment disputes",
+      "Drafting contracts and policies to prevent disputes",
+    ],
+    link: "/our-services#dispute-resolution",
+  },
+  {
+    title: "NGO/INGO Services",
+    items: [
+      "Assisting with registration and compliance for non-governmental organizations (NGOs) and international non-governmental organizations (INGOs)",
+      "Handling visa and work permit issues",
+      "Drafting and reviewing project proposals and agreements",
+    ],
+    link: "/our-services#ngo-ingo-services",
   },
 ];
 
@@ -108,16 +266,14 @@ const OurServices = () => {
         className="absolute inset-0 bg-black z-0 w-full"
         style={{
           clipPath: "polygon(100% 0, 0% 100%, 100% 100%)",
-        }}
-      ></div>
+        }}></div>
 
       {/* Content */}
       <article className="container relative z-10 mx-auto px-4">
         <h2
           className="text-5xl font-bold text-center text-gray-800 mb-8"
           data-aos="fade-up"
-          data-aos-once="true"
-        >
+          data-aos-once="true">
           Our Services
         </h2>
         <div className="flex flex-wrap justify-center gap-6 w-full">
@@ -127,8 +283,7 @@ const OurServices = () => {
               href={service.link}
               className="block w-full sm:w-auto"
               data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
+              data-aos-delay={index * 100}>
               <div className="bg-white rounded-lg w-full sm:w-[300px] shadow-md p-6 h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <h3 className="text-xl font-semibold text-blue-600 mb-2">
                   {service.title}

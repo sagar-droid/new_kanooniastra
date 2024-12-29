@@ -10,16 +10,14 @@ const About = () => {
         <h2
           className=" text-5xl font-semibold"
           data-aos="fade-up"
-          data-aos-once="true"
-        >
+          data-aos-once="true">
           Building Lasting Relationships
         </h2>
         <p
           className=" text-xl"
           data-aos="fade-up"
           data-aos-once="true"
-          data-aos-delay="500"
-        >
+          data-aos-delay="500">
           At Kanooni Astra, we don&apos;t just represent clients; we build
           lasting relationships based on trust, integrity, and transparency. Our
           goal is not just to meet expectations but to exceed them, leaving a
