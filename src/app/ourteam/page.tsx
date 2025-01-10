@@ -24,14 +24,17 @@ const OurTeamPage = () => {
               }}
               className="rounded-lg hover:bg-primary hover:text-white transition-all" // hover on the card to change text color
             >
-              <Image
-                width={300}
-                height={300}
-                src={member.image}
-                alt={member.name}
-                style={{ width: "100%" }}
-                className="max-h-[300px] object-cover rounded-md"
-              />
+              <div
+                className="overflow-hidden rounded-md"
+                style={{ height: "250px", width: "100%" }}>
+                <Image
+                  width={300}
+                  height={300}
+                  src={member.image}
+                  alt={member.name}
+                  className="object-cover object-top w-full h-full"
+                />
+              </div>
               <h2 className="text-2xl font-semibold">{member.name}</h2>
               <p className="text-xl">{member.role}</p>
               <p>{member.bio.substring(0, 100)}...</p>

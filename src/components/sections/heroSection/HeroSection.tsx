@@ -17,7 +17,10 @@ const HeroSection = () => {
           <div className=" items-center text-lg flex justify-between w-full">
             <MenuItems />
 
-            <Button title="Contact Us" link="/contactus" />
+            <div className=" flex gap-4">
+              <Button title="Contact Us" link="/contactus" />
+              <Button title="Appointment" link="#" className="border-none" />
+            </div>
           </div>
         </article>
         <div className=" z-20">
@@ -37,11 +40,14 @@ const HeroSection = () => {
       </section>
 
       <article className="relative h-screen">
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1 className="text-5xl lg:text-[120px] uppercase text-primary font-bold">
             Kanooni
             <span className=" text-white">Astra</span>
           </h1>
+          <p className=" text-2xl font-semibold text-white">
+            ASTRA FOR ALL LEGAL ISSUES
+          </p>
         </div>
         <div className="absolute flex text-2xl items-center justify-center bottom-0 text-white p-8">
           <p>

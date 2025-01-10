@@ -11,12 +11,17 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        marquee: "marquee 25s linear infinite",
+        marquee: "marquee 20s linear infinite",
+        marquee2: "marquee2 20s linear 20s infinite",
       },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(-232%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(300%)" },
+          "100%": { transform: "translateX(-300%)" },
         },
       },
       backgroundImage: {

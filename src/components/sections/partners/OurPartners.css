@@ -1,0 +1,4 @@
+.animate-marquee-infinite {
+  overflow: hidden;
+  white-space: nowrap; /* Prevents wrapping of the logos */
+}

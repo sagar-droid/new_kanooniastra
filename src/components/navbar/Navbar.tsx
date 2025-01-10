@@ -40,8 +40,10 @@ const Navbar = () => {
             </div>
             <div className=" flex items-center text-lg justify-between w-full">
               <MenuItems />
-
-              <Button title="Contact Us" link="/contactus" />
+              <div className=" flex gap-10">
+                <Button title="Contact Us" link="/contactus" />
+                <Button title="Appointment" link="/contactus" />
+              </div>
             </div>
           </article>
           <div>

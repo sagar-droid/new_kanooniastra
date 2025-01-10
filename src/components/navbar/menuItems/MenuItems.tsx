@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const menuItems = {
-  Services: [
+  "Practice Area": [
     {
       title: "Foreign Direct Investment",
       link: "/our-services#foreign-direct-investment",
@@ -19,7 +19,40 @@ const menuItems = {
     { title: "Litigation", link: "/our-services#litigation" },
     { title: "Criminal Law", link: "/our-services#criminal-law" },
   ],
-  Solutions: [], // Empty array for menu items without dropdown
+  Resources: [
+    { title: "Blogs", link: "#" },
+    { title: "Article", link: "#" },
+    {
+      title: "Useful Link",
+      submenu: [
+        {
+          title: "Supreme Court of Nepal",
+          link: "https://supremecourt.gov.np/web/",
+        },
+        {
+          title: "Nepal Bar Association",
+          link: "https://nepalbarassociation.org.np/",
+        },
+        {
+          title: "Nepal law commission",
+          link: "https://www.lawcommission.gov.np/",
+        },
+        {
+          title: "Kathmandu District Court Bar Association",
+          link: "https://www.kathmandubar.org.np/",
+        },
+        {
+          title: "Inland Revenue Department",
+          link: "https://www.ird.gov.np/",
+        },
+        {
+          title: "International Media Lawyers Association",
+          link: "https://www.medialawinternational.com/",
+        },
+      ],
+    },
+    { title: "News and Information", link: "#" },
+  ],
   Company: [
     { title: "About Us", link: "/aboutus" },
     { title: "Our Team", link: "/ourteam" },
@@ -28,14 +61,20 @@ const menuItems = {
 };
 
 const MenuItems = () => {
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
-  const handleDropdownToggle = (key: any) => {
+  const handleDropdownToggle = (key: string) => {
     setActiveDropdown(activeDropdown === key ? null : key);
   };
 
+  const handleSubmenuToggle = (key: string) => {
+    setActiveSubmenu(activeSubmenu === key ? null : key);
+  };
+
   const handleItemClick = () => {
-    setActiveDropdown(null); // Close dropdown when an item is clicked
+    setActiveDropdown(null);
+    setActiveSubmenu(null);
   };
 
   return (
@@ -56,9 +95,27 @@ const MenuItems = () => {
           </div>
           {items.length > 0 && activeDropdown === key && (
             <ul className="absolute dropdown-content text-black menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-              {items.map((item) => (
-                <li key={item.title} onClick={handleItemClick}>
-                  <Link href={item.link}>{item.title}</Link>
+              {items.map((item: any) => (
+                <li key={item.title} className="relative">
+                  <div
+                    className="flex justify-between items-center cursor-pointer"
+                    onClick={() =>
+                      item.submenu
+                        ? handleSubmenuToggle(item.title)
+                        : handleItemClick()
+                    }>
+                    <Link href={item.link || "#"}>{item.title}</Link>
+                    {item.submenu && <IoIosArrowDown />}
+                  </div>
+                  {item.submenu && activeSubmenu === item.title && (
+                    <ul className="absolute border-2 border-gray-200 -left-2 top-[100%] m-0 md:ml-4 md:left-full md:top-0 text-black menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                      {item.submenu.map((subItem: any) => (
+                        <li key={subItem.title} onClick={handleItemClick}>
+                          <Link href={subItem.link}>{subItem.title}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
@@ -68,5 +125,4 @@ const MenuItems = () => {
     </ul>
   );
 };
-
 export default MenuItems;
