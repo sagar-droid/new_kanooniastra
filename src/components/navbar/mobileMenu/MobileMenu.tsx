@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuItems from "../menuItems/MenuItems";
 import Button from "../../common/Button";
+import AppointmentComponent from "@/components/appointmentComponent/AppointmentComponent";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +47,7 @@ const MobileMenu = () => {
               transition={{ delay: 0.2 }}>
               <MenuItems />
               <Button title="Contact Us" link="/contactus" />
+              <AppointmentComponent />
             </motion.div>
           </motion.div>
         )}

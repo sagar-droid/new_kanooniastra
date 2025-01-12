@@ -118,7 +118,7 @@ const MenuItems = () => {
   };
 
   return (
-    <ul className="flex flex-col md:flex-row gap-6">
+    <ul className="flex flex-col md:flex-row !z-[999999] gap-6">
       {Object.entries(menuItems).map(([key, items]) => (
         <li key={key} className={items.length > 0 ? "relative" : ""}>
           <div
@@ -134,7 +134,7 @@ const MenuItems = () => {
             )}
           </div>
           {items.length > 0 && activeDropdown === key && (
-            <ul className="absolute dropdown-content text-black menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+            <ul className="absolute dropdown-content text-black menu bg-base-100 rounded-box z-[99999] w-52 p-2 shadow">
               {items.map((item: any) => (
                 <li key={item.title} className="relative">
                   <div
@@ -148,7 +148,7 @@ const MenuItems = () => {
                     {item.submenu && <IoIosArrowDown />}
                   </div>
                   {item.submenu && activeSubmenu === item.title && (
-                    <ul className="absolute border-2 border-gray-200 -left-2 top-[100%] m-0 md:ml-4 md:left-full md:top-0 text-black menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    <ul className="absolute border-2 border-gray-200 -left-2 top-[100%] m-0 md:ml-4 md:left-full md:top-0 text-black menu bg-base-100 rounded-box !z-[999999] md:w-96 p-2 shadow">
                       {item.submenu.map((subItem: any) => (
                         <li key={subItem.title} onClick={handleItemClick}>
                           <Link href={subItem.link}>{subItem.title}</Link>
