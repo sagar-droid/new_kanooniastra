@@ -6,6 +6,7 @@ import MenuItems from "./menuItems/MenuItems";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileMenu from "./mobileMenu/MobileMenu";
+import AppointmentComponent from "../appointmentComponent/AppointmentComponent";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -42,7 +43,7 @@ const Navbar = () => {
               <MenuItems />
               <div className=" flex gap-10">
                 <Button title="Contact Us" link="/contactus" />
-                <Button title="Appointment" link="/contactus" />
+                <AppointmentComponent/>
               </div>
             </div>
           </article>

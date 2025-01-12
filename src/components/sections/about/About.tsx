@@ -5,7 +5,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className=" container py-24 overflow-x-hidden flex flex-col lg:flex-row gap-6">
+    <section className=" container py-24 overflow-clip flex flex-col lg:flex-row gap-6">
       <div className=" flex flex-col flex-1 gap-6">
         <h2
           className=" text-5xl font-semibold"
@@ -32,13 +32,13 @@ const About = () => {
           <Button title="About Us" link="/aboutus" />
         </div>
       </div>
-      <div data-aos-once="true" data-aos="fade-left">
+      <div data-aos-once="true" data-aos="fade-left" className=" overflow-clip">
         <Image
           src="/about.jpg"
           alt="about"
           width={500}
           height={500}
-          className=" rounded"
+          className=" rounded overflow-clip"
         />
       </div>
     </section>
