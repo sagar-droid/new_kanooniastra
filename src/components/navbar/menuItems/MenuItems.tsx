@@ -30,25 +30,65 @@ const menuItems = {
           link: "https://supremecourt.gov.np/web/",
         },
         {
-          title: "Nepal Bar Association",
-          link: "https://nepalbarassociation.org.np/",
+          title: "Nepal Kanoon Patrika",
+          link: "https://nkp.gov.np/",
+        },
+        {
+          title: "Company Registar Office",
+          link: "https://camis.ocr.gov.np/",
         },
         {
           title: "Nepal law commission",
           link: "https://www.lawcommission.gov.np/",
         },
         {
-          title: "Kathmandu District Court Bar Association",
-          link: "https://www.kathmandubar.org.np/",
+          title: "Tax office",
+          link: "https://ird.gov.np/",
         },
         {
-          title: "Inland Revenue Department",
-          link: "https://www.ird.gov.np/",
+          title: "Department of cottage and small Industries",
+          link: "http://www.dcsi.gov.np/en",
         },
         {
-          title: "International Media Lawyers Association",
-          link: "https://www.medialawinternational.com/",
+          title: "Department of Industries",
+          link: "https://doind.gov.np/",
         },
+        {
+          title: "Department of commerce supplies and consumer protection",
+          link: "https://doc.gov.np/",
+        },
+        {
+          title: "Tourism Board",
+          link: "https://www.tourismdepartment.gov.np/",
+        },
+        {
+          title: "Department of Food Technology and Quality Control",
+          link: "https://dftqc.gov.np/",
+        },
+        {
+          title: "Tourism Office Kathmandu",
+          link: "https://tourismktm.bagamati.gov.np/",
+        },
+        {
+          title: "Social Wealfare Council",
+          link: "https://www.swc.org.np/ne",
+        },
+        {
+          title: "Office of the attorney General Nepal",
+          link: "https://www.swc.org.np/ne",
+        },
+        {
+          title: "Ip Bulletin",
+          link: "https://doind.gov.np/industrial-property-bulletin ",
+        },
+        // {
+        //   title: "Inland Revenue Department",
+        //   link: "https://www.ird.gov.np/",
+        // },
+        // {
+        //   title: "International Media Lawyers Association",
+        //   link: "https://www.medialawinternational.com/",
+        // },
       ],
     },
     { title: "News and Information", link: "#" },
