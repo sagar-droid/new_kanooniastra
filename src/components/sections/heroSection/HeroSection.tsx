@@ -48,7 +48,7 @@ const HeroSection = () => {
             <span className="text-white">Astra</span>
           </h1>
           <p className="text-2xl font-semibold text-white">
-            " ASTRA FOR ALL LEGAL ISSUES "
+            &ldquo; ASTRA FOR ALL LEGAL ISSUES &rdquo;
           </p>
         </div>
         <div className="absolute flex text-2xl items-center justify-center bottom-0 text-white p-8">

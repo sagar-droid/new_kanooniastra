@@ -32,7 +32,9 @@ const Footer = () => {
               data-aso-delay="500"
               data-aos-offset="-100">
               <h2 className=" text-4xl">Kanooniastra</h2>
-              <p className=" text-lg italic">" Astra For All Legal Issues "</p>
+              <p className=" text-lg italic">
+                &ldquo; Astra For All Legal Issues &rdqua;
+              </p>
             </div>
           </div>
           <div>
