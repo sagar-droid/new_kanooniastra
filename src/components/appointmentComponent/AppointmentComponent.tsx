@@ -18,7 +18,7 @@ const AppointmentComponent = () => {
   return (
     <div className="relative">
       <button
-        className="bg-primary border text-white py-2 px-4 rounded"
+        className="rounded-lg text-xl bg-primary p-2 text-white hover:border-black hover:border-2 hover:bg-white border-2 border-white hover:text-black"
         onClick={handleDropdownToggle}>
         Appointment
       </button>

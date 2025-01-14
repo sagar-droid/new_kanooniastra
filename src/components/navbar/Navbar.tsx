@@ -36,14 +36,19 @@ const Navbar = () => {
           <article className=" container py-4 hidden  md:flex gap-20 text-black items-center">
             <div>
               <Link href="/">
-                <Image src="/logo.png" alt="logo" width={100} height={100} />
+                <Image
+                  src="/logowhite.png"
+                  alt="logo"
+                  width={130}
+                  height={130}
+                />
               </Link>
             </div>
-            <div className=" flex items-center text-lg justify-between w-full">
+            <div className=" flex items-center text-xl justify-between w-full">
               <MenuItems />
-              <div className=" flex gap-10">
+              <div className=" flex gap-10 items-center">
                 <Button title="Contact Us" link="/contactus" />
-                <AppointmentComponent/>
+                <AppointmentComponent />
               </div>
             </div>
           </article>

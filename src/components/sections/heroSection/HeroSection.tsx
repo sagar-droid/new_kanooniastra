@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import AppointmentComponent from "@/components/appointmentComponent/AppointmentComponent";
 import Button from "@/components/common/Button";
 import MenuItems from "@/components/navbar/menuItems/MenuItems";
@@ -8,22 +8,20 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 const HeroSection = () => {
-
-
   return (
     <section className="relative w-full h-screen overflow-hidden">
       <section className="bg-transparent z-10 w-full absolute top-0">
         <article className="container py-10 hidden md:flex gap-20 text-white items-center">
           <div>
-            <Image src="/logo.png" alt="logo" width={100} height={100} />
+            <Image src="/logowhite.png" alt="logo" width={130} height={130} />
           </div>
-          <div className="items-center text-lg flex justify-between w-full">
+          <div className="items-center text-xl flex justify-between w-full">
             <MenuItems />
 
             <div className="flex gap-4">
               <Button title="Contact Us" link="/contactus" />
               {/* Appointment Dropdown */}
-              <AppointmentComponent/>
+              <AppointmentComponent />
             </div>
           </div>
         </article>
@@ -37,8 +35,7 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
-          playsInline
-        >
+          playsInline>
           <source src="/video.mp4" type="video/mp4" className="w-full" />
           Your browser does not support the video tag.
         </video>
@@ -51,7 +48,7 @@ const HeroSection = () => {
             <span className="text-white">Astra</span>
           </h1>
           <p className="text-2xl font-semibold text-white">
-            ASTRA FOR ALL LEGAL ISSUES
+            " ASTRA FOR ALL LEGAL ISSUES "
           </p>
         </div>
         <div className="absolute flex text-2xl items-center justify-center bottom-0 text-white p-8">

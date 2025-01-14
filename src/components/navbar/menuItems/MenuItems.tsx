@@ -1,9 +1,11 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const menuItems = {
+  // Home: { title: "Home", link: "/" },
   "Practice Area": [
     {
       title: "Foreign Direct Investment",
@@ -93,7 +95,7 @@ const menuItems = {
     },
     { title: "News and Information", link: "#" },
   ],
-  Company: [
+  About: [
     { title: "About Us", link: "/aboutus" },
     { title: "Our Team", link: "/ourteam" },
     { title: "Careers", link: "/careers" },
@@ -101,6 +103,7 @@ const menuItems = {
 };
 
 const MenuItems = () => {
+  const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
@@ -118,7 +121,12 @@ const MenuItems = () => {
   };
 
   return (
-    <ul className="flex flex-col md:flex-row !z-[999999] gap-6">
+    <ul className="flex flex-col md:items-center md:flex-row !z-[999999] gap-6">
+      {pathname !== "/" && (
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+      )}
       {Object.entries(menuItems).map(([key, items]) => (
         <li key={key} className={items.length > 0 ? "relative" : ""}>
           <div
@@ -134,7 +142,7 @@ const MenuItems = () => {
             )}
           </div>
           {items.length > 0 && activeDropdown === key && (
-            <ul className="absolute dropdown-content text-black menu bg-base-100 rounded-box z-[99999] w-52 p-2 shadow">
+            <ul className="absolute dropdown-content text-black text-xl menu bg-base-100 rounded-box z-[99999] w-52 p-2 shadow">
               {items.map((item: any) => (
                 <li key={item.title} className="relative">
                   <div

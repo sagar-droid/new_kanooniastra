@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { team } from "../../../data/team";
-// import { Button } from "@/components/ui/button";
 
 const OurTeamPage = () => {
   return (
@@ -10,31 +9,33 @@ const OurTeamPage = () => {
       <h1 className="text-5xl text-primary flex justify-center items-center mb-12">
         Meet Our Team
       </h1>
-      <div className="flex justify-center gap-12 flex-wrap">
-        {team.map((member) => (
+      <div className="flex flex-col gap-16">
+        {team.map((member, index) => (
           <div
             key={member.id}
-            className="rounded-lg border border-gray-200 p-4 w-[300px] hover:shadow-lg transition-all duration-300">
-            <div className="overflow-hidden rounded-md h-64 mb-4">
+            className={`flex flex-col ${
+              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            } items-center gap-8`}>
+            {/* Image Section */}
+            <div className="relative w-full md:w-[40%] overflow-hidden rounded-md">
               <Image
                 width={300}
                 height={300}
                 src={member.image}
                 alt={member.name}
-                className="object-cover object-top w-full h-full"
+                className="object-cover object-center w-full h-full"
               />
             </div>
-            <div className="space-y-2">
+            {/* Text Section */}
+            <div className="md:w-1/2 flex flex-col gap-6">
               <h2 className="text-2xl font-semibold">{member.name}</h2>
               <p className="text-xl text-gray-600">{member.role}</p>
-              <p className="text-gray-600 line-clamp-3">{member.bio}</p>
-              <div className="pt-4">
-                <Link href={`/ourteam/${member.id}`}>
-                  <button className="w-full bg-primary hover:bg-primary/90 text-white">
-                    View Profile
-                  </button>
-                </Link>
-              </div>
+              <p className="text-gray-600">{member.bio}</p>
+              <Link href={`/ourteam/${member.id}`}>
+                <button className="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md transition-all duration-300">
+                  View Profile
+                </button>
+              </Link>
             </div>
           </div>
         ))}
