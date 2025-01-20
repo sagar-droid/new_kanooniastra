@@ -41,7 +41,7 @@ const MobileMenu = () => {
             transition={{ type: "tween", duration: 0.3 }}
             className="fixed top-0 left-0 w-full h-full bg-primary z-40 flex flex-col">
             <motion.div
-              className="flex flex-col items-center space-y-6 text-white overflow-y-auto h-full p-6"
+              className="flex flex-col items-center justify-center space-y-6 text-white overflow-y-auto h-full p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}>

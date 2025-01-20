@@ -9,9 +9,9 @@ import React, { useState } from "react";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-screen ">
       <section className="bg-transparent z-10 w-full absolute top-0">
-        <article className="container py-10 hidden md:flex gap-20 text-white items-center">
+        <article className="container py-10 hidden md:flex gap-20 !z-[999999] text-white items-center">
           <div>
             <Image src="/logowhite.png" alt="logo" width={130} height={130} />
           </div>

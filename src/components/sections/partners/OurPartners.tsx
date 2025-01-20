@@ -22,9 +22,15 @@ const OurPartners = () => {
   ];
 
   return (
-    <div className="w-full relative overflow-hidden bg-white py-24">
+    <div className="w-full relative overflow-hidden bg-white ">
+      <h2
+        className="text-4xl md:text-5xl pt-10 flex justify-center font-bold text-gray-800 mb-6"
+        data-aos="fade-up"
+        data-aos-once="true">
+        Our Happy Clients
+      </h2>
       {/* First row of logos */}
-      <div className="flex animate-marquee whitespace-nowrap">
+      <div className="flex py-24 animate-marquee whitespace-nowrap">
         {partners.map((partner) => (
           <Image
             key={`first-${partner.id}`}

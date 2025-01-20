@@ -55,22 +55,24 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="container py-24">
-      <div className="mb-12">
-        <h2
-          className="flex flex-col gap-2 text-5xl border-primary border-l-4 pl-4"
-          data-aos="fade-right">
-          Our Team <span className="text-lg">Meet our team members</span>
-        </h2>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {teamMembers.map((member, index) => (
-          <TeamMember key={index} {...member} />
-        ))}
-      </div>
-      <div className=" mt-8" data-aos="fade-up" data-aos-once="true">
-        <Button title="Meet Our Team" link="/ourteam" />
-      </div>
+    <section className="bg-gray-50 py-24">
+      <article className="container">
+        <div className="mb-12">
+          <h2
+            className="flex flex-col gap-2 text-5xl border-primary border-l-4 pl-4"
+            data-aos="fade-right">
+            Our Team <span className="text-lg">Meet our team members</span>
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map((member, index) => (
+            <TeamMember key={index} {...member} />
+          ))}
+        </div>
+        <div className=" mt-8" data-aos="fade-up" data-aos-once="true">
+          <Button title="Meet Our Team" link="/ourteam" />
+        </div>
+      </article>
     </section>
   );
 };

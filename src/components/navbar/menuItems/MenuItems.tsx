@@ -1,11 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const menuItems = {
-  // Home: { title: "Home", link: "/" },
   "Practice Area": [
     {
       title: "Foreign Direct Investment",
@@ -83,14 +82,6 @@ const menuItems = {
           title: "Ip Bulletin",
           link: "https://doind.gov.np/industrial-property-bulletin ",
         },
-        // {
-        //   title: "Inland Revenue Department",
-        //   link: "https://www.ird.gov.np/",
-        // },
-        // {
-        //   title: "International Media Lawyers Association",
-        //   link: "https://www.medialawinternational.com/",
-        // },
       ],
     },
     { title: "News and Information", link: "#" },
@@ -106,12 +97,33 @@ const MenuItems = () => {
   const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const menuRef = useRef<HTMLUListElement>(null);
 
-  const handleDropdownToggle = (key: string) => {
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+        setActiveSubmenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleDropdownToggle = (key: string, event: React.MouseEvent) => {
+    event.stopPropagation();
     setActiveDropdown(activeDropdown === key ? null : key);
+    // Close submenu when switching dropdowns
+    if (activeDropdown !== key) {
+      setActiveSubmenu(null);
+    }
   };
 
-  const handleSubmenuToggle = (key: string) => {
+  const handleSubmenuToggle = (key: string, event: React.MouseEvent) => {
+    event.stopPropagation();
     setActiveSubmenu(activeSubmenu === key ? null : key);
   };
 
@@ -121,19 +133,23 @@ const MenuItems = () => {
   };
 
   return (
-    <ul className="flex flex-col md:items-center md:flex-row !z-[999999] gap-6">
+    <ul
+      ref={menuRef}
+      className="flex flex-col md:items-center md:flex-row !z-[999999] gap-6">
       {pathname !== "/" && (
-        <li>
+        <li className="hover:text-red-500">
           <Link href="/">Home</Link>
         </li>
       )}
       {Object.entries(menuItems).map(([key, items]) => (
-        <li key={key} className={items.length > 0 ? "relative" : ""}>
+        <li
+          key={key}
+          className={items.length > 0 ? "relative hover:text-red-500" : ""}>
           <div
             tabIndex={0}
             role="button"
             className="flex gap-2 items-center cursor-pointer"
-            onClick={() => handleDropdownToggle(key)}>
+            onClick={(e) => handleDropdownToggle(key, e)}>
             {key}
             {items.length > 0 && (
               <span className="flex items-center">
@@ -147,9 +163,9 @@ const MenuItems = () => {
                 <li key={item.title} className="relative">
                   <div
                     className="flex justify-between items-center cursor-pointer"
-                    onClick={() =>
+                    onClick={(e) =>
                       item.submenu
-                        ? handleSubmenuToggle(item.title)
+                        ? handleSubmenuToggle(item.title, e)
                         : handleItemClick()
                     }>
                     <Link href={item.link || "#"}>{item.title}</Link>
@@ -173,4 +189,5 @@ const MenuItems = () => {
     </ul>
   );
 };
+
 export default MenuItems;
