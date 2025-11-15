@@ -30,7 +30,7 @@ export const team = [
   },
   {
     id: 3,
-    name: "Advocate Sita Bashyal",
+    name: "Advocate Site Bashyal",
     role: "Co-Founder, Managing Director",
     category:'Head Office',
     bio: `Advocate Ms. Sita Bashyal plays a pivotal role in Kanooni Astra's journey, enriching the team with her extensive knowledge and expertise.`,
