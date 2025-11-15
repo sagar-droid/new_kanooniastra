@@ -1,7 +1,6 @@
 import { team } from "../../../../data/team";
 import TeamMemberClient from "../../../components/TeamMemberClient";
 
-// Server-side function to generate static params
 export async function generateStaticParams() {
   return team.map((member) => ({
     id: member.id.toString(),
@@ -14,7 +13,6 @@ const TeamMemberPage = ({ params }: { params: { id: string } }) => {
   if (!member) {
     return <div>Team member not found.</div>;
   }
-
   return (
     <div>
       <TeamMemberClient member={member} />

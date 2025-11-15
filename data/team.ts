@@ -3,6 +3,7 @@ export const team = [
     id: 1,
     name: "Advocate Praveen Bhattarai",
     role: "Founder & CEO",
+    category:'Head Office',
     bio: `Advocate Praveen Bhattarai is the driving force behind Kanooni Astra, bringing a blend of youthful energy and legal expertise to the forefront. 
       As the founder and CEO, he leads the charge in providing innovative legal solutions to our clients.`,
     details: `Specializes in drafting corporate and civil cases, creating contracts, and representing clients in various courts and tribunals. 
@@ -17,9 +18,10 @@ export const team = [
   },
   {
     id: 2,
-    name: "Rochak Dhungel",
+    name: "Advocate Rochak Dhungel",
     role: "Co-Founder, Public Relations Officer",
-    bio: `Rochak Dhungel embodies the spirit of Kanooni Astra as both a co-founder and the firm's Public Relations Officer, infusing it with his vibrant energy and steadfast dedication.`,
+    category:'Head Office',
+    bio: `Advocate Rochak Dhungel embodies the spirit of Kanooni Astra as both a co-founder and the firm's Public Relations Officer, infusing it with his vibrant energy and steadfast dedication.`,
     details: `Specializes in Commercial Law, corporate compliance, and regulatory procedures. Excels in trademark and patent registration.`,
     email: "rochakkanooniastra@gmail.com",
     contact: "9844393183",
@@ -28,9 +30,10 @@ export const team = [
   },
   {
     id: 3,
-    name: "Sita Bashyal",
+    name: "Advocate Sita Bashyal",
     role: "Co-Founder, Managing Director",
-    bio: `Ms. Sita Bashyal plays a pivotal role in Kanooni Astra's journey, enriching the team with her extensive knowledge and expertise.`,
+    category:'Head Office',
+    bio: `Advocate Ms. Sita Bashyal plays a pivotal role in Kanooni Astra's journey, enriching the team with her extensive knowledge and expertise.`,
     details: `Specializes in contract drafting, domestic violence issues, and foreign direct investment laws.`,
     email: "sitakanooniastra@gmail.com",
     contact: "9867350369",
@@ -41,6 +44,7 @@ export const team = [
     id: 4,
     name: "Danda Prasad Bhattarai",
     role: "Associate, Senior Consultant",
+    category:'Branch Office',
     bio: `With over three decades of seasoned expertise, Mr. Bhattarai is a stalwart in Nepal's legal realm.`,
     details: `Prowess extends from District Courts to the Supreme Court. Renowned for crafting compelling legal arguments.`,
     email: "N/A",

@@ -40,14 +40,14 @@ const OurTeam = () => {
     },
     {
       id: 2,
-      name: "Rochak Dhungel",
+      name: "Advocate Rochak Dhungel",
       image: "/profile2.jpg",
       designation: "Co- Founder, Public Relation Officer",
       email: "rochakkanooniastra@gmail.com",
     },
     {
       id: 3,
-      name: "Sita Bashyal",
+      name: "Advocate Sita Bashyal",
       image: "/profile3.jpg",
       designation: "Co- Founder,  Managing Director",
       email: "sitakanooniastra@gmail.com",
