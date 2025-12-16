@@ -5,7 +5,6 @@ const nextConfig = {
     EMAIL_USER: process.env.EMAIL_USER,
     EMAIL_PASS: process.env.EMAIL_PASS,
   },
-  domains: ["kanooniastra.com"],
   images: {
     unoptimized: true,
     domains: ["kanooniastra.com"],
