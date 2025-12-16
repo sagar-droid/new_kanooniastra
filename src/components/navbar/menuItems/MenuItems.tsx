@@ -138,7 +138,7 @@ const MenuItems = () => {
       className="flex flex-col md:items-center md:flex-row !z-[999999] gap-6">
       {pathname !== "/" && (
         <li className="hover:text-red-500">
-          <Link href="/">Home</Link>
+          <Link href="/">Home is here</Link>
         </li>
       )}
       {Object.entries(menuItems).map(([key, items]) => (
