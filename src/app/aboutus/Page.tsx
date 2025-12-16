@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-
 const AboutusPage = () => {
   return (
     <section className="container py-24">
