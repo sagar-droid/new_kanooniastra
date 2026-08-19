@@ -6,8 +6,7 @@ const nextConfig = {
     EMAIL_PASS: process.env.EMAIL_PASS,
   },
   images: {
-    unoptimized: true,
-    domains: ["kanooniastra.com"],
+    formats: ["image/avif", "image/webp"],
   },
 };
 

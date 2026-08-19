@@ -1,5 +1,14 @@
 import Image from "next/image";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description:
+    "Kanooni Astra was founded in Kathmandu by Adv. Praveen Bhattarai, Adv. Rochak Dhungel, and Adv. Sita Bashyal. Learn about our story and approach to legal excellence in Nepal.",
+  alternates: { canonical: "/aboutus" },
+};
+
 const AboutusPage = () => {
   return (
     <section className="container py-24">
@@ -42,7 +51,7 @@ const AboutusPage = () => {
         </div>
         <div className="">
           <Image
-            src="/aboutPage.png"
+            src="/about-us-kanooni-astra.png"
             alt="aboutPage"
             width={500}
             height={500}

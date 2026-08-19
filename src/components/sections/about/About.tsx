@@ -34,7 +34,7 @@ const About = () => {
       </div>
       <div data-aos-once="true" data-aos="fade-left" className=" overflow-clip">
         <Image
-          src="/about.jpg"
+          src="/about-kanooni-astra-office.jpg"
           alt="about"
           width={500}
           height={500}

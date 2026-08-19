@@ -1,6 +1,7 @@
 import Button from "@/components/common/Button";
 import Image from "next/image";
 import React from "react";
+import { team } from "../../../../data/team";
 
 const TeamMember = ({ name, image, designation, email, id }: any) => {
   return (
@@ -30,29 +31,15 @@ const TeamMember = ({ name, image, designation, email, id }: any) => {
 };
 
 const OurTeam = () => {
-  const teamMembers = [
-    {
-      id: 1,
-      name: "Advocate Praveen Bhattarai",
-      image: "/profile1.jpg",
-      designation: "Founder & CEO",
-      email: "praveenkanooniastra@gmail.com",
-    },
-    {
-      id: 2,
-      name: "Advocate Rochak Dhungel",
-      image: "/profile2.jpg",
-      designation: "Co- Founder, Public Relation Officer",
-      email: "rochakkanooniastra@gmail.com",
-    },
-    {
-      id: 3,
-      name: "Advocate Sita Bashyal",
-      image: "/profile3.jpg",
-      designation: "Co- Founder,  Managing Director",
-      email: "sitakanooniastra@gmail.com",
-    },
-  ];
+  const teamMembers = team
+    .filter((member) => member.category === "Head Office")
+    .map((member) => ({
+      id: member.id,
+      name: member.name,
+      image: member.image,
+      designation: member.role,
+      email: member.email,
+    }));
 
   return (
     <section className="bg-gray-50 py-24">

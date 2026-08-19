@@ -1,6 +1,14 @@
 import Image from "next/image";
 import React from "react";
+import type { Metadata } from "next";
 import { cn } from "../../../utils/cn";
+
+export const metadata: Metadata = {
+  title: "Careers",
+  description:
+    "Join Kanooni Astra's legal team in Kathmandu. Explore current openings for associate attorneys, legal assistants, paralegals, and internships.",
+  alternates: { canonical: "/careers" },
+};
 
 const Careers = () => {
   const data = [
@@ -56,7 +64,7 @@ const Careers = () => {
         </div>
         <div>
           <Image
-            src="/team.png"
+            src="/kanooni-astra-team.png"
             alt="team"
             width={500}
             height={500}

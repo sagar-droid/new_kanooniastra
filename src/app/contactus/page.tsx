@@ -1,39 +1,15 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
+import type { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Get in touch with Kanooni Astra at our Adwaitmarg, Bagbazar, Kathmandu office by phone, email, or the contact form below.",
+  alternates: { canonical: "/contactus" },
+};
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e: any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        alert("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
-    }
-  };
   return (
     <section className="container py-24">
       <h1 className="text-5xl flex justify-center items-center mb-12">
@@ -78,56 +54,7 @@ const ContactUs = () => {
           ></iframe>
         </div>
         <div className="flex-1 place-content-center">
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name" className="block mb-1">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full p-2 border rounded"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block mb-1">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full p-2 border rounded"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block mb-1">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                // rows="4"
-                value={formData.message}
-                onChange={handleChange}
-                className="w-full p-2 border rounded"
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="rounded-lg bg-primary p-2 text-white hover:border-black hover:border-2 hover:bg-white border-2 border-white hover:text-black"
-            >
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </article>
     </section>

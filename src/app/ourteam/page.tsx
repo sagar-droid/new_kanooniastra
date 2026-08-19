@@ -1,7 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { team } from "../../../data/team";
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description:
+    "Meet the advocates and legal consultants of Kanooni Astra, serving clients from our head office and branch office in Nepal.",
+  alternates: { canonical: "/ourteam" },
+};
 
 const categories = ["Head Office", "Branch Office"];
 

@@ -14,7 +14,7 @@ export const team = [
       "BALLB: TU National Law College",
       "LLM: PU, Kathmandu School of Law (Running)",
     ],
-    image: "/profile1.jpg",
+    image: "/praveen-bhattarai-advocate.jpg",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const team = [
     email: "rochakkanooniastra@gmail.com",
     contact: "9844393183",
     education: ["B.B.M L.L.B: Kathmandu University School of Law"],
-    image: "/profile2.jpg",
+    image: "/rochak-dhungel-advocate.jpg",
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const team = [
     email: "sitakanooniastra@gmail.com",
     contact: "9867350369",
     education: ["BALLB: TU National Law College"],
-    image: "/profile3.jpg",
+    image: "/sita-bashyal-advocate.jpg",
   },
   {
     id: 4,
@@ -50,6 +50,6 @@ export const team = [
     email: "N/A",
     contact: "N/A",
     education: ["Started practicing in 1991 A.D."],
-    image: "/profile4.png",
+    image: "/danda-prasad-bhattarai-advocate.png",
   },
 ];
