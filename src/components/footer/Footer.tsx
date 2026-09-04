@@ -54,7 +54,7 @@ const Footer = () => {
                   kanooniastra@gmail.com
                 </a>
               </li>
-              <li>Address: Adwaitmarg, Bagbazar, Kathmandu, Nepal.</li>
+              <li>Address: Ghattekulo marg, Kathmandu, Nepal.</li>
               <li className=" flex gap-6">
                 <span>
                   <Link href="https://www.facebook.com/KanooniAstra">

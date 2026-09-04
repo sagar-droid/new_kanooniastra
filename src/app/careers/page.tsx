@@ -10,6 +10,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/careers" },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Careers",
+      item: "https://kanooniastra.com/careers",
+    },
+  ],
+};
+
 const Careers = () => {
   const data = [
     {
@@ -49,6 +62,10 @@ const Careers = () => {
   ];
   return (
     <section className=" container py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <article className=" flex gap-10 items-center mb-10">
         <div className="flex-1">
           <h1 className=" text-[124px]">
@@ -65,7 +82,7 @@ const Careers = () => {
         <div>
           <Image
             src="/kanooni-astra-team.png"
-            alt="team"
+            alt="Illustration of a team growing together, representing career growth at Kanooni Astra"
             width={500}
             height={500}
             className=""

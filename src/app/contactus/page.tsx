@@ -5,13 +5,30 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Kanooni Astra at our Adwaitmarg, Bagbazar, Kathmandu office by phone, email, or the contact form below.",
+    "Get in touch with Kanooni Astra at our Ghattekulo marg, Kathmandu office by phone, email, or the contact form below.",
   alternates: { canonical: "/contactus" },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Contact Us",
+      item: "https://kanooniastra.com/contactus",
+    },
+  ],
 };
 
 const ContactUs = () => {
   return (
     <section className="container py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <h1 className="text-5xl flex justify-center items-center mb-12">
         Thank you for contacting <span className="text-primary ml-2">US</span>
       </h1>
@@ -19,7 +36,7 @@ const ContactUs = () => {
         <div className="flex-1 text-xl bg-gray-100 p-6 rounded-lg">
           <h2 className="text-3xl font-semibold mb-4">Contact Details</h2>
           <p className="mb-2">
-            <strong>Address:</strong> Adwaitmarg, Bagbazar, Kathmandu, Nepal.
+            <strong>Address:</strong> Ghattekulo marg, Kathmandu, Nepal.
           </p>
           <p className="mb-2">
             <strong>Phone:</strong>{" "}

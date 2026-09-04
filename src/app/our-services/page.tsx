@@ -10,9 +10,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/our-services" },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Our Services",
+      item: "https://kanooniastra.com/our-services",
+    },
+  ],
+};
+
 const OurServicesPage = () => {
   return (
     <div className=" min-h-screen py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-primary mb-12">
           Our Services

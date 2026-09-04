@@ -13,9 +13,26 @@ export const metadata: Metadata = {
 
 const categories = ["Head Office", "Branch Office"];
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Our Team",
+      item: "https://kanooniastra.com/ourteam",
+    },
+  ],
+};
+
 const OurTeamPage = () => {
   return (
     <section className="container py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <h1 className="text-5xl text-primary flex justify-center items-center mb-12">
         Meet Our Team
       </h1>
@@ -37,7 +54,7 @@ const OurTeamPage = () => {
                       width={300}
                       height={300}
                       src={member.image}
-                      alt={member.name}
+                      alt={`${member.name}, ${member.role} at Kanooni Astra`}
                       className="object-cover object-center w-full h-full"
                     />
                   </div>

@@ -9,9 +9,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "/aboutus" },
 };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "About Us",
+      item: "https://kanooniastra.com/aboutus",
+    },
+  ],
+};
+
 const AboutusPage = () => {
   return (
     <section className="container py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <div>
         <h1 className=" text-[124px] text-primary">About Us</h1>
       </div>
@@ -52,7 +69,7 @@ const AboutusPage = () => {
         <div className="">
           <Image
             src="/about-us-kanooni-astra.png"
-            alt="aboutPage"
+            alt="Illustration of a Kanooni Astra lawyer with a law book, representing legal services in Nepal"
             width={500}
             height={500}
             className=""

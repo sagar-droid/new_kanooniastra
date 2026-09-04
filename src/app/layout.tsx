@@ -6,6 +6,8 @@ import Navbar from "@/components/navbar/Navbar";
 import Provider from "./provider";
 import Footer from "@/components/footer/Footer";
 import NextTopLoader from "nextjs-toploader";
+import { services } from "../../data/services";
+import { team } from "../../data/team";
 
 // const inter = Inter({ subsets: ["latin"] });
 const barlow = Barlow_Condensed({
@@ -53,6 +55,10 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
+const founders = team.filter((member) =>
+  member.role.toLowerCase().includes("founder")
+);
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "LegalService",
@@ -62,11 +68,21 @@ const organizationJsonLd = {
   logo: `${siteUrl}/logo.png`,
   image: `${siteUrl}/logo.png`,
   description: defaultDescription,
+  foundingDate: "2022-12-05",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Adwaitmarg, Bagbazar",
+    streetAddress: "Ghattekulo marg",
     addressLocality: "Kathmandu",
     addressCountry: "NP",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 27.7032936,
+    longitude: 85.3169575,
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Nepal",
   },
   telephone: ["+977-9843671048", "+977-9844393183", "+977-9867350369"],
   email: "kanooniastra@gmail.com",
@@ -75,6 +91,13 @@ const organizationJsonLd = {
     "https://www.linkedin.com/company/kanooni-astra",
     "https://www.instagram.com/kanooni_astra/?hl=en",
   ],
+  founder: founders.map((member) => ({
+    "@type": "Person",
+    name: member.name,
+    jobTitle: member.role,
+    url: `${siteUrl}/ourteam/${member.id}`,
+  })),
+  knowsAbout: services.map((service) => service.title),
 };
 
 export default function RootLayout({
