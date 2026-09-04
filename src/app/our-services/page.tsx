@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { services } from "../../../data/services";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Our Legal Services in Kathmandu, Nepal",
   description:
     "Kanooni Astra offers legal services across corporate law, foreign direct investment, intellectual property, litigation, family law, criminal law, and more in Nepal.",
   alternates: { canonical: "/our-services" },
@@ -31,9 +31,12 @@ const OurServicesPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center text-primary mb-12">
-          Our Services
+        <h1 className="text-4xl font-bold text-center text-primary mb-2">
+          Our Legal Services in Nepal
         </h1>
+        <p className="text-center text-gray-600 mb-12">
+          Kanooni Astra&apos;s practice areas, based in Kathmandu
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <Link

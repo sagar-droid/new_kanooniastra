@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Our Law Firm in Kathmandu, Nepal",
   description:
     "Get in touch with Kanooni Astra at our Ghattekulo marg, Kathmandu office by phone, email, or the contact form below.",
   alternates: { canonical: "/contactus" },
@@ -30,8 +30,11 @@ const ContactUs = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <h1 className="text-5xl flex justify-center items-center mb-12">
-        Thank you for contacting <span className="text-primary ml-2">US</span>
+        Contact <span className="text-primary ml-2">Kanooni Astra</span>
       </h1>
+      <p className="text-xl text-center text-gray-600 -mt-8 mb-12">
+        Law Firm in Kathmandu, Nepal
+      </p>
       <article className="flex flex-col md:flex-row gap-8">
         <div className="flex-1 text-xl bg-gray-100 p-6 rounded-lg">
           <h2 className="text-3xl font-semibold mb-4">Contact Details</h2>

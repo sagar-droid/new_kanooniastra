@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { cn } from "../../../utils/cn";
 
 export const metadata: Metadata = {
-  title: "Careers",
+  title: "Legal Careers & Job Openings in Kathmandu",
   description:
     "Join Kanooni Astra's legal team in Kathmandu. Explore current openings for associate attorneys, legal assistants, paralegals, and internships.",
   alternates: { canonical: "/careers" },
@@ -71,6 +71,9 @@ const Careers = () => {
           <h1 className=" text-[124px]">
             Join Our <span className=" text-primary">Team</span>
           </h1>
+          <h2 className="text-2xl text-gray-700 mb-4">
+            Legal Careers at Our Law Firm in Kathmandu, Nepal
+          </h2>
           <p className=" text-xl ">
             At Kanooni Astra, we believe in nurturing talent, fostering growth,
             and empowering individuals to reach their full potential. If

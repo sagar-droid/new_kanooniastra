@@ -47,6 +47,9 @@ const HeroSection = () => {
             Kanooni
             <span className="text-white">Astra</span>
           </h1>
+          <h2 className="text-2xl font-semibold text-white">
+            Law Firm in Kathmandu, Nepal
+          </h2>
           <p className="text-2xl font-semibold text-white">
             &ldquo; ASTRA FOR ALL LEGAL ISSUES &rdquo;
           </p>

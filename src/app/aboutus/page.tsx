@@ -3,7 +3,7 @@ import React from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Our Law Firm in Kathmandu, Nepal",
   description:
     "Kanooni Astra was founded in Kathmandu by Adv. Praveen Bhattarai, Adv. Rochak Dhungel, and Adv. Sita Bashyal. Learn about our story and approach to legal excellence in Nepal.",
   alternates: { canonical: "/aboutus" },
@@ -31,6 +31,9 @@ const AboutusPage = () => {
       />
       <div>
         <h1 className=" text-[124px] text-primary">About Us</h1>
+        <h2 className="text-2xl text-gray-700">
+          Kanooni Astra - Law Firm in Kathmandu, Nepal
+        </h2>
       </div>
       <div className=" flex flex-col md:flex-row gap-6">
         <div className="flex-1 flex text-lg">

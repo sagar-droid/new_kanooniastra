@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { team } from "../../../data/team";
 
 export const metadata: Metadata = {
-  title: "Our Team",
+  title: "Meet Our Advocates in Kathmandu, Nepal",
   description:
     "Meet the advocates and legal consultants of Kanooni Astra, serving clients from our head office and branch office in Nepal.",
   alternates: { canonical: "/ourteam" },
@@ -33,9 +33,12 @@ const OurTeamPage = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <h1 className="text-5xl text-primary flex justify-center items-center mb-12">
-        Meet Our Team
+      <h1 className="text-5xl text-primary flex justify-center items-center mb-2">
+        Meet Our Team of Advocates in Nepal
       </h1>
+      <p className="text-center text-gray-600 mb-12">
+        Serving clients from our head office and branch office in Kathmandu
+      </p>
       {categories.map((category) => (
         <div key={category} className="mb-16">
           <h2 className="text-4xl text-primary mb-8">{category}</h2>
