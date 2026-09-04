@@ -61,7 +61,7 @@ const founders = team.filter((member) =>
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LegalService",
+  "@type": ["Organization", "LegalService"],
   name: "Kanooni Astra",
   alternateName: "Kanooniastra",
   url: siteUrl,
