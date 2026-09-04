@@ -1,9 +1,18 @@
 import Button from "@/components/common/Button";
 import Image from "next/image";
 import React from "react";
-import { team } from "../../../../data/team";
+import { connectToDatabase } from "@/lib/mongodb";
+import TeamMemberModel from "@/models/TeamMember";
 
-const TeamMember = ({ name, image, designation, email, id }: any) => {
+interface TeamMemberCardProps {
+  id: number;
+  name: string;
+  image: string;
+  designation: string;
+  email?: string;
+}
+
+const TeamMember = ({ id, name, image, designation, email }: TeamMemberCardProps) => {
   return (
     <div
       className="bg-white rounded-lg shadow-md overflow-hidden"
@@ -22,24 +31,32 @@ const TeamMember = ({ name, image, designation, email, id }: any) => {
       <div className="p-4">
         <h3 className="text-xl font-semibold">{name}</h3>
         <p className="text-gray-600 text-lg">{designation}</p>
-        <a href={`mailto:${email}`} className="text-blue-500 hover:underline">
-          {email}
-        </a>
+        {email && (
+          <a href={`mailto:${email}`} className="text-blue-500 hover:underline">
+            {email}
+          </a>
+        )}
       </div>
     </div>
   );
 };
 
-const OurTeam = () => {
-  const teamMembers = team
-    .filter((member) => member.category === "Head Office")
-    .map((member) => ({
-      id: member.id,
-      name: member.name,
-      image: member.image,
-      designation: member.role,
-      email: member.email,
-    }));
+const OurTeam = async () => {
+  await connectToDatabase();
+  const members = await TeamMemberModel.find({
+    status: "published",
+    officeLocation: "Head Office",
+  })
+    .sort({ displayOrder: 1 })
+    .lean();
+
+  const teamMembers = members.map((member) => ({
+    id: member.displayOrder,
+    name: member.name,
+    image: member.photo.url,
+    designation: member.designation,
+    email: member.email,
+  }));
 
   return (
     <section className="bg-gray-50 py-24">

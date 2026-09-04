@@ -1,34 +1,9 @@
 "use client";
-import AppointmentComponent from "@/components/appointmentComponent/AppointmentComponent";
-import Button from "@/components/common/Button";
-import MenuItems from "@/components/navbar/menuItems/MenuItems";
-import MobileMenu from "@/components/navbar/mobileMenu/MobileMenu";
-import Navbar from "@/components/navbar/Navbar";
-import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen ">
-      <section className="bg-transparent z-10 w-full absolute top-0">
-        <article className="container py-10 hidden md:flex gap-20 !z-[999999] text-white items-center">
-          <div>
-            <Image src="/logowhite.png" alt="logo" width={130} height={130} />
-          </div>
-          <div className="items-center text-xl flex justify-between w-full">
-            <MenuItems />
-
-            <div className="flex gap-4">
-              <Button title="Contact Us" link="/contactus" />
-              {/* Appointment Dropdown */}
-              <AppointmentComponent />
-            </div>
-          </div>
-        </article>
-        <div className="z-20">
-          <MobileMenu />
-        </div>
-      </section>
       <section>
         <video
           className="absolute z-0 top-0 left-0 w-full h-[100vh] object-cover"

@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import MenuItems from "../menuItems/MenuItems";
 import Button from "../../common/Button";
@@ -10,18 +9,15 @@ import AppointmentComponent from "@/components/appointmentComponent/AppointmentC
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const bgColor = pathname === "/" ? "bg-transparent" : "bg-white";
-
   return (
-    <div className="md:hidden z-[9999999999999]">
+    <div className="md:hidden z-[9999999999999] sticky top-0">
       <div
-        className={`flex justify-between items-center p-4 ${bgColor} text-primary`}>
+        className="flex justify-between items-center p-4 bg-white text-primary shadow-md">
         <Link href="/">
           <Image src="/logo.png" alt="logo" width={80} height={80} />
         </Link>
