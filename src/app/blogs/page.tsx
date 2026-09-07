@@ -41,7 +41,7 @@ const BlogIndexPage = async () => {
         {posts.map((post) => (
           <Link
             key={String(post._id)}
-            href={`/blog/${post.slug}`}
+            href={`/blogs/${post.slug}`}
             className="flex flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
           >
             <div className="relative h-48 w-full">

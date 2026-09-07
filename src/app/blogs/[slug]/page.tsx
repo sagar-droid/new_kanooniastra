@@ -38,7 +38,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: { canonical: `/blog/${post.slug}` },
+    alternates: { canonical: `/blogs/${post.slug}` },
     openGraph: {
       title,
       description,
@@ -71,7 +71,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       name: "Kanooni Astra",
       logo: { "@type": "ImageObject", url: "https://kanooniastra.com/logo.png" },
     },
-    mainEntityOfPage: `https://kanooniastra.com/blog/${post.slug}`,
+    mainEntityOfPage: `https://kanooniastra.com/blogs/${post.slug}`,
   };
 
   const breadcrumbJsonLd = {
@@ -84,7 +84,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://kanooniastra.com/blog/${post.slug}`,
+        item: `https://kanooniastra.com/blogs/${post.slug}`,
       },
     ],
   };
