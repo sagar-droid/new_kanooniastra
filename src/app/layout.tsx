@@ -8,6 +8,7 @@ import Footer from "@/components/footer/Footer";
 import NextTopLoader from "nextjs-toploader";
 import PublicChrome from "@/components/layout/PublicChrome";
 import FloatingContact from "@/components/contact/FloatingContact";
+import DisclaimerModal from "@/components/common/DisclaimerModal";
 import { connectToDatabase } from "@/lib/mongodb";
 import TeamMemberModel from "@/models/TeamMember";
 import { services } from "../../data/services";
@@ -123,6 +124,7 @@ export default async function RootLayout({
         />
         <NextTopLoader height={4} color="#FF0000" showSpinner={false} />
         <Provider />
+        <DisclaimerModal />
         <PublicChrome>
           <Navbar />
         </PublicChrome>
