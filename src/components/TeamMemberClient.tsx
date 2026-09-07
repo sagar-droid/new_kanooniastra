@@ -2,15 +2,27 @@
 
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion"; // Import framer-motion
+import { motion } from "framer-motion";
 
-const TeamMemberClient = ({ member }: { member: any }) => {
+interface TeamMemberClientProps {
+  member: {
+    name: string;
+    image: string;
+    role: string;
+    bio: string;
+    email?: string;
+    contact?: string;
+    education: string[];
+  };
+}
+
+const TeamMemberClient = ({ member }: TeamMemberClientProps) => {
   return (
     <motion.div
       className="container py-24 mx-auto"
-      initial={{ opacity: 0 }} // Initial state: invisible
-      animate={{ opacity: 1 }} // Final state: fully visible
-      transition={{ duration: 0.8 }} // Duration of the fade-in effect
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
     >
       <div className="flex flex-col md:flex-row items-center gap-10">
         <motion.div
@@ -52,54 +64,50 @@ const TeamMemberClient = ({ member }: { member: any }) => {
             {member.bio}
           </motion.p>
 
-          <motion.p
-            className="text-lg text-gray-600"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.9 }}>
-            {member.details}
-          </motion.p>
+          {(member.email || member.contact) && (
+            <motion.div
+              className="text-gray-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}>
+              <h3 className="text-xl font-semibold">Contact Information:</h3>
+              <ul className="space-y-2">
+                {member.email && (
+                  <li>
+                    Email:{" "}
+                    <a href={`mailto:${member.email}`} className="text-blue-500 hover:underline">
+                      {member.email}
+                    </a>
+                  </li>
+                )}
+                {member.contact && (
+                  <li>
+                    Whatsapp/Viber:{" "}
+                    <a href={`tel:${member.contact}`} className="text-blue-500 hover:underline">
+                      {member.contact}
+                    </a>
+                  </li>
+                )}
+              </ul>
+            </motion.div>
+          )}
 
-          <motion.div
-            className="text-gray-800"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}>
-            <h3 className="text-xl font-semibold">Contact Information:</h3>
-            <ul className="space-y-2">
-              <li>
-                Email:
-                <a
-                  href={`mailto:${member.email}`}
-                  className="text-blue-500 hover:underline">
-                  {member.email}
-                </a>
-              </li>
-              <li>
-                Whatsapp/Viber:
-                <a
-                  href={`tel:${member.contact}`}
-                  className="text-blue-500 hover:underline">
-                  {member.contact}
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-
-          <motion.div
-            className="text-gray-800"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.1 }}>
-            <h3 className="text-xl font-semibold">Educational Background:</h3>
-            <ul className="space-y-2">
-              {member.education.map((edu: any, idx: any) => (
-                <li key={idx} className="list-disc pl-5">
-                  {edu}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          {member.education.length > 0 && (
+            <motion.div
+              className="text-gray-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.1 }}>
+              <h3 className="text-xl font-semibold">Educational Background:</h3>
+              <ul className="space-y-2">
+                {member.education.map((edu, idx) => (
+                  <li key={idx} className="list-disc pl-5">
+                    {edu}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
         </div>
       </div>
     </motion.div>

@@ -7,6 +7,8 @@ import OurServices from "@/components/sections/services/OurServices";
 import KanooniAstraValues from "@/components/sections/values/Values";
 import React from "react";
 
+export const revalidate = 3600;
+
 const HomePage = () => {
   return (
     <section>
@@ -15,8 +17,8 @@ const HomePage = () => {
       <KanooniAstraValues />
       <OurServices />
       <OurTeam />
-      <JoinUs />
       <OurPartners />
+      <JoinUs />
     </section>
   );
 };

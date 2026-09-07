@@ -7,42 +7,42 @@ const KanooniAstraValues = () => {
       id: 1,
       title: "Integrity",
       description:
-        "We conduct ourselves with honesty, transparency, and ethical conduct at all times. Integrity is the bedrock of our relationships with clients, colleagues, and the community, and we remain steadfast in upholding the trust placed in us.",
+        "Kanooni Astra advises clients in plain, direct language about what Nepali law requires, what a matter will cost, and what risks it carries, before the engagement begins rather than after. Advocates disclose conflicts of interest and give case status updates as standard practice, not as an exception.",
       iconClass: "bg-primary/10",
     },
     {
       id: 2,
       title: "Excellence",
       description:
-        "We are relentless in our pursuit of excellence, striving to deliver superior outcomes and innovative solutions to our clients' legal challenges. Our dedication to continuous improvement and learning ensures that we stay at the forefront of legal innovation.",
+        "Kanooni Astra's advocates track changes to Nepal's regulatory framework, including company registration requirements, FDI approval procedures, and intellectual property filing rules, so client strategy stays current with the law rather than reactive to it.",
       iconClass: "bg-primary/10",
     },
     {
       id: 3,
       title: "Client-Centricity",
       description:
-        "Our clients are at the heart of everything we do. We listen attentively to their needs, understand their objectives, and tailor our services to meet their unique requirements. Building lasting relationships based on trust, respect, and empathy is paramount to us.",
+        "Kanooni Astra tailors its approach to each client's actual objective: a foreign investor seeking FDI approval needs different support than a family navigating a custody dispute in Kathmandu. Advocates confirm that objective at intake rather than defaulting to a standard process.",
       iconClass: "bg-primary/10",
     },
     {
       id: 4,
       title: "Collaboration",
       description:
-        "We believe in the power of teamwork and collaboration. By harnessing the collective expertise and diverse perspectives of our team members, we deliver comprehensive and holistic solutions that exceed our clients' expectations.",
+        "Kanooni Astra's advocates coordinate across practice areas on matters that cross legal lines, such as a property transaction that also involves a corporate ownership structure. That cross-practice review happens on multi-issue matters as a matter of course, not as a special arrangement.",
       iconClass: "bg-primary/10",
     },
     {
       id: 5,
       title: "Social Responsibility",
       description:
-        "We are committed to making a positive impact on society and giving back to the communities we serve. Through pro bono work, community service initiatives, and advocacy for social justice, we strive to be agents of positive change in the world.",
+        "Kanooni Astra takes on pro bono and reduced-fee matters for clients in Kathmandu and across Nepal who cannot otherwise afford legal representation, alongside its regular fee-paying caseload.",
       iconClass: "bg-primary/10",
     },
     {
       id: 6,
       title: "Innovation",
       description:
-        "We embrace creativity, innovation, and forward thinking in everything we do. By staying abreast of emerging legal trends, leveraging technology, and adopting progressive approaches, we continuously seek to redefine the boundaries of legal excellence.",
+        "Kanooni Astra adapts its procedures as Nepal's legal and regulatory landscape changes, including tracking evolving technology, media, and telecommunications (TMT) regulation as that sector grows in Nepal. Process changes are treated as an ordinary part of practicing law, not a special initiative.",
       iconClass: "bg-primary/10",
     },
   ];
@@ -63,11 +63,10 @@ const KanooniAstraValues = () => {
             data-aos="fade-up"
             data-aos-once="true"
             data-aos-delay="100">
-            At Kanooni Astra, our values form the cornerstone of everything we
-            do. They guide our actions, shape our decisions, and define who we
-            are as a firm. Our commitment to these core principles ensures that
-            we uphold the highest standards of integrity, professionalism, and
-            excellence in all our endeavors.
+            Kanooni Astra is a law firm based in Kathmandu, Nepal, practicing
+            across foreign direct investment, intellectual property, corporate,
+            property, and family law. The six principles below describe how
+            the firm&apos;s advocates handle client matters day to day.
           </p>
         </div>
 
@@ -110,11 +109,8 @@ const KanooniAstraValues = () => {
           data-aos-once="true"
           data-aos-delay="300">
           <p className="text-lg text-gray-600 italic">
-            At Kanooni Astra, our values are not just words on a page; they are
-            the guiding principles that inform our actions and shape our
-            identity as a firm. We are proud to uphold these values each day as
-            we work tirelessly to serve our clients and make a difference in the
-            world.
+            These principles shape how Kanooni Astra&apos;s advocates handle
+            every case, from initial consultation through resolution.
           </p>
         </div>
       </div>

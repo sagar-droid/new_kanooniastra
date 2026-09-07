@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { IoCalendarOutline } from "react-icons/io5";
 
 const AppointmentComponent = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -18,9 +19,10 @@ const AppointmentComponent = () => {
   return (
     <div className="relative">
       <button
-        className="rounded-lg text-xl bg-primary p-2 text-white hover:border-black hover:border-2 hover:bg-white border-2 border-white hover:text-black"
+        className="flex items-center gap-2 rounded-lg text-base bg-primary p-2 text-white hover:border-black hover:border-2 hover:bg-white border-2 border-white hover:text-black"
         onClick={handleDropdownToggle}>
         Appointment
+        <IoCalendarOutline />
       </button>
       {showDropdown && (
         <div className="absolute top-full mt-2 bg-white shadow-lg rounded p-2 text-black">

@@ -2,7 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { team } from "../../../data/team";
+import { connectToDatabase } from "@/lib/mongodb";
+import TeamMemberModel from "@/models/TeamMember";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Meet Our Advocates in Kathmandu, Nepal",
@@ -26,7 +29,12 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const OurTeamPage = () => {
+const OurTeamPage = async () => {
+  await connectToDatabase();
+  const team = await TeamMemberModel.find({ status: "published" })
+    .sort({ displayOrder: 1 })
+    .lean();
+
   return (
     <section className="container py-24">
       <script
@@ -44,10 +52,10 @@ const OurTeamPage = () => {
           <h2 className="text-4xl text-primary mb-8">{category}</h2>
           <div className="flex flex-col gap-16">
             {team
-              .filter((member) => member.category === category)
+              .filter((member) => member.officeLocation === category)
               .map((member, index) => (
                 <div
-                  key={member.id}
+                  key={String(member._id)}
                   className={`flex flex-col ${
                     index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   } items-center gap-8`}
@@ -56,16 +64,16 @@ const OurTeamPage = () => {
                     <Image
                       width={300}
                       height={300}
-                      src={member.image}
-                      alt={`${member.name}, ${member.role} at Kanooni Astra`}
+                      src={member.photo.url}
+                      alt={member.photo.alt}
                       className="object-cover object-center w-full h-full"
                     />
                   </div>
                   <div className="md:w-1/2 flex flex-col gap-6">
                     <h2 className="text-2xl font-semibold">{member.name}</h2>
-                    <p className="text-xl text-gray-600">{member.role}</p>
+                    <p className="text-xl text-gray-600">{member.designation}</p>
                     <p className="text-gray-600">{member.bio}</p>
-                    <Link href={`/ourteam/${member.id}`}>
+                    <Link href={`/ourteam/${member.slug}`}>
                       <button className="bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md transition-all duration-300">
                         View Profile
                       </button>

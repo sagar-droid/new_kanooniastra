@@ -6,8 +6,11 @@ import Navbar from "@/components/navbar/Navbar";
 import Provider from "./provider";
 import Footer from "@/components/footer/Footer";
 import NextTopLoader from "nextjs-toploader";
+import PublicChrome from "@/components/layout/PublicChrome";
+import FloatingContact from "@/components/contact/FloatingContact";
+import { connectToDatabase } from "@/lib/mongodb";
+import TeamMemberModel from "@/models/TeamMember";
 import { services } from "../../data/services";
-import { team } from "../../data/team";
 
 // const inter = Inter({ subsets: ["latin"] });
 const barlow = Barlow_Condensed({
@@ -55,11 +58,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
-const founders = team.filter((member) =>
-  member.role.toLowerCase().includes("founder")
-);
-
-const organizationJsonLd = {
+const baseOrganizationJsonLd = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LegalService"],
   name: "Kanooni Astra",
@@ -91,20 +90,30 @@ const organizationJsonLd = {
     "https://www.linkedin.com/company/kanooni-astra",
     "https://www.instagram.com/kanooni_astra/?hl=en",
   ],
-  founder: founders.map((member) => ({
-    "@type": "Person",
-    name: member.name,
-    jobTitle: member.role,
-    url: `${siteUrl}/ourteam/${member.id}`,
-  })),
   knowsAbout: services.map((service) => service.title),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await connectToDatabase();
+  const founders = await TeamMemberModel.find({
+    status: "published",
+    designation: { $regex: "founder", $options: "i" },
+  }).lean();
+
+  const organizationJsonLd = {
+    ...baseOrganizationJsonLd,
+    founder: founders.map((member) => ({
+      "@type": "Person",
+      name: member.name,
+      jobTitle: member.designation,
+      url: `${siteUrl}/ourteam/${member.slug}`,
+    })),
+  };
+
   return (
     <html lang="en">
       <body className={`${barlow.className} overflow-x-hidden`}>
@@ -114,9 +123,16 @@ export default function RootLayout({
         />
         <NextTopLoader height={4} color="#FF0000" showSpinner={false} />
         <Provider />
-        <Navbar />
+        <PublicChrome>
+          <Navbar />
+        </PublicChrome>
         {children}
-        <Footer />
+        <PublicChrome>
+          <Footer />
+        </PublicChrome>
+        <PublicChrome>
+          <FloatingContact />
+        </PublicChrome>
       </body>
     </html>
   );
