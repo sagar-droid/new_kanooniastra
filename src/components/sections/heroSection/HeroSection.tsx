@@ -15,7 +15,6 @@ const HeroSection = () => {
           Your browser does not support the video tag.
         </video>
       </section>
-
       <article className="relative h-screen">
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1 className="text-5xl lg:text-[120px] uppercase text-primary font-bold">
