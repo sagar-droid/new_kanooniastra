@@ -1,5 +1,5 @@
-"use client";
 import React from "react";
+import Button from "@/components/common/Button";
 
 const HeroSection = () => {
   return (
@@ -25,6 +25,13 @@ const HeroSection = () => {
           <p className="text-2xl font-semibold text-white">
             &ldquo; ASTRA FOR ALL LEGAL ISSUES &rdquo;
           </p>
+          <div className="mt-8">
+            <Button
+              title="Book a Consultation"
+              link="/contactus"
+              className="bg-transparent text-white border-2 border-white hover:bg-primary hover:text-white hover:border-primary"
+            />
+          </div>
         </div>
         <div className="absolute flex text-2xl items-center justify-center bottom-0 text-white p-8">
           <p>

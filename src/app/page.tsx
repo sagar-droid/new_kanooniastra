@@ -17,8 +17,8 @@ const HomePage = () => {
       <KanooniAstraValues />
       <OurServices />
       <OurTeam />
-      <JoinUs />
       <OurPartners />
+      <JoinUs />
     </section>
   );
 };

@@ -7,6 +7,7 @@ import Provider from "./provider";
 import Footer from "@/components/footer/Footer";
 import NextTopLoader from "nextjs-toploader";
 import PublicChrome from "@/components/layout/PublicChrome";
+import FloatingContact from "@/components/contact/FloatingContact";
 
 // const inter = Inter({ subsets: ["latin"] });
 const barlow = Barlow_Condensed({
@@ -98,6 +99,9 @@ export default function RootLayout({
         {children}
         <PublicChrome>
           <Footer />
+        </PublicChrome>
+        <PublicChrome>
+          <FloatingContact />
         </PublicChrome>
       </body>
     </html>

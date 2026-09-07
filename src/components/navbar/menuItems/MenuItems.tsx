@@ -14,8 +14,9 @@ const practiceAreaItems: MenuLeaf[] = services.map((service) => ({
 
 const publicationItems: MenuLeaf[] = [
   { title: "Blogs", link: "/blogs" },
-  { title: "Article", link: "/articles" },
-  { title: "News and Information", link: "/news" },
+  { title: "Case Studies", link: "/case-studies" },
+  { title: "Testimonials", link: "/testimonials" },
+  { title: "FAQ", link: "/faq" },
 ];
 
 const resourceCenterItems: MenuLeaf[] = [
