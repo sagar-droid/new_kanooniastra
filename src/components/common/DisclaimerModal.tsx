@@ -36,17 +36,17 @@ const DisclaimerModal = () => {
       aria-labelledby="disclaimer-title"
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4"
     >
-      <div className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white p-6 shadow-xl">
-        <h2 id="disclaimer-title" className="text-xl font-semibold text-gray-900">
+      <div className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-xl bg-white p-8 shadow-xl">
+        <h2 id="disclaimer-title" className="text-3xl font-semibold text-gray-900">
           Disclaimer
         </h2>
-        <div className="mt-4 space-y-3 text-sm leading-relaxed text-gray-700">
+        <div className="mt-5 space-y-4 text-base leading-relaxed text-gray-700 md:text-lg">
           <p>
             The Nepal Bar Council&apos;s rules of professional conduct do not permit
             advocates or law firms to advertise or solicit work. By clicking &quot;I
             Accept&quot; below, you confirm and acknowledge that:
           </p>
-          <ul className="list-disc space-y-1 pl-5">
+          <ul className="list-disc space-y-2 pl-6">
             <li>
               You are accessing this website (kanooniastra.com) on your own
               initiative, and there has been no advertisement, personal
@@ -70,10 +70,10 @@ const DisclaimerModal = () => {
             </li>
           </ul>
         </div>
-        <label className="mt-5 flex items-start gap-2 text-sm text-gray-800">
+        <label className="mt-6 flex items-start gap-3 text-base text-gray-800 md:text-lg">
           <input
             type="checkbox"
-            className="mt-1 h-4 w-4 shrink-0"
+            className="mt-1 h-5 w-5 shrink-0"
             checked={checked}
             onChange={(e) => setChecked(e.target.checked)}
           />
@@ -86,7 +86,7 @@ const DisclaimerModal = () => {
           type="button"
           disabled={!checked}
           onClick={() => setAccepted(true)}
-          className="mt-5 w-full rounded-md bg-primary px-4 py-2 font-medium text-white transition disabled:cursor-not-allowed disabled:opacity-50 hover:opacity-90"
+          className="mt-6 w-full rounded-md bg-primary px-4 py-3 text-lg font-medium text-white transition disabled:cursor-not-allowed disabled:opacity-50 hover:opacity-90"
         >
           I Accept
         </button>
