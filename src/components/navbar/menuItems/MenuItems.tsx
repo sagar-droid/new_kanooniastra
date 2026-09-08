@@ -65,7 +65,7 @@ const menuEntries: MenuEntry[] = [
   { key: "Our Services", link: "/our-services" },
   { key: "Publication", items: publicationItems },
   { key: "Resource Center", items: resourceCenterItems },
-  { key: "Contact", link: "/contactus" },
+  // { key: "Contact", link: "/contactus" },
 ];
 
 const MenuItems = () => {
