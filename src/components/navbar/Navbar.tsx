@@ -43,7 +43,7 @@ const Navbar = () => {
     <>
       <div
         ref={headerRef}
-        className="hidden md:block fixed top-0 left-0 w-full z-50">
+        className="hidden lg:block fixed top-0 left-0 w-full z-50">
         {!isScrolled && <TopBar />}
         <section
           className={`w-full transition-colors duration-300 ${
@@ -88,7 +88,7 @@ const Navbar = () => {
       </div>
       {!isHome && (
         <div
-          className="hidden md:block transition-[height] duration-300"
+          className="hidden lg:block transition-[height] duration-300"
           style={{ height: headerHeight }}
         />
       )}

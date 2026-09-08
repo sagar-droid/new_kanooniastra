@@ -15,17 +15,17 @@ const HeroSection = () => {
           Your browser does not support the video tag.
         </video>
       </section>
-      
+
       <article className="relative h-screen">
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1 className="text-5xl lg:text-[120px] uppercase text-primary font-bold">
+          <h1 className="text-5xl md:text-[120px] uppercase text-primary font-bold">
             Kanooni
             <span className="text-white">Astra</span>
           </h1>
           {/* <h2 className="text-2xl font-semibold text-white">
             Law Firm in Kathmandu, Nepal
           </h2> */}
-          <h2 className="text-2xl font-semibold text-white">
+          <h2 className="text-3xl md:text-2xl font-semibold text-white">
             &ldquo; ASTRA FOR ALL LEGAL ISSUES &rdquo;
           </h2>
           <div className="mt-8">
@@ -36,7 +36,7 @@ const HeroSection = () => {
             />
           </div>
         </div>
-        <div className="absolute flex text-2xl items-center justify-center bottom-0 text-white p-8">
+        <div className="absolute flex text-3xl sm:text-2xl items-center justify-center bottom-0 text-white p-8">
           <p>
             Beacon of{" "}
             <span className="text-primary italic">legal excellence</span> forged

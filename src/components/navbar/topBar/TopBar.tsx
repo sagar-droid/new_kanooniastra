@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const TopBar = () => {
   return (
-    <div className="hidden md:flex bg-[#0b1b34] text-white text-base">
+    <div className="hidden lg:flex bg-[#0b1b34] text-white text-base">
       <div className="container flex items-center justify-between py-2">
         <div className="flex items-center gap-4">
           <a

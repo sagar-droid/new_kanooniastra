@@ -98,7 +98,7 @@ const MenuItems = () => {
   return (
     <ul
       ref={menuRef}
-      className="flex flex-col md:items-center md:flex-row !z-[999999] gap-6 uppercase text-base font-semibold tracking-wide">
+      className="flex flex-col lg:items-center lg:flex-row !z-[999999] gap-6 uppercase text-base font-semibold tracking-wide">
       {pathname !== "/" && (
         <li className="hover:text-primary">
           <Link href="/">Home</Link>
@@ -117,14 +117,14 @@ const MenuItems = () => {
                 onClick={(e) => handleDropdownToggle(entry.key, e)}>
                 {entry.key}
                 <span
-                  className={`flex items-center transition-transform duration-200 md:group-hover:rotate-180 ${
+                  className={`flex items-center transition-transform duration-200 lg:group-hover:rotate-180 ${
                     activeDropdown === entry.key ? "rotate-180" : ""
                   }`}>
                   <IoIosArrowDown />
                 </span>
               </div>
               <ul
-                className={`absolute dropdown-content normal-case text-black text-base menu bg-base-100 rounded-box z-[99999] w-72 max-h-96 overflow-y-auto p-2 shadow-lg transition-all duration-200 ease-out origin-top md:group-hover:opacity-100 md:group-hover:visible md:group-hover:translate-y-0 md:group-hover:pointer-events-auto ${
+                className={`absolute dropdown-content normal-case text-black text-base menu bg-base-100 rounded-box z-[99999] w-72 max-h-96 overflow-y-auto p-2 shadow-lg transition-all duration-200 ease-out origin-top lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto ${
                   activeDropdown === entry.key
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2 pointer-events-none"
