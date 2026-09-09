@@ -31,7 +31,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "var(--primary-color)",
+        primary: "rgb(var(--primary-color) / <alpha-value>)",
       },
       fontFamily: {
         outline: ["Londrina Outline", "sans-serif"],

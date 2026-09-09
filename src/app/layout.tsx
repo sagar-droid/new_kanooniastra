@@ -9,6 +9,7 @@ import NextTopLoader from "nextjs-toploader";
 import PublicChrome from "@/components/layout/PublicChrome";
 import FloatingContact from "@/components/contact/FloatingContact";
 import DisclaimerModal from "@/components/common/DisclaimerModal";
+import IntroLoader from "@/components/common/IntroLoader";
 import { connectToDatabase } from "@/lib/mongodb";
 import TeamMemberModel from "@/models/TeamMember";
 import { services } from "../../data/services";
@@ -119,11 +120,47 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${barlow.className} overflow-x-hidden`}>
         <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  // Clean up any old persistent localStorage or cookies from earlier versions
+                  localStorage.removeItem('introShown');
+                  localStorage.removeItem('introSessionShown');
+                  document.cookie = 'introShown=; Max-Age=0; path=/;';
+                  document.cookie = 'introSessionShown=; Max-Age=0; path=/;';
+
+                  var path = window.location.pathname;
+                  var isHome = path === '/' || path === '';
+                  var isForced = window.location.search.indexOf('intro=true') !== -1;
+                  var seen = sessionStorage.getItem('introSessionShown') === 'true';
+                  if (isHome && (!seen || isForced)) {
+                    document.documentElement.classList.add('intro-pending');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              html:not(.intro-pending) #intro-splash-screen {
+                display: none !important;
+              }
+              html.intro-pending body {
+                overflow: hidden !important;
+              }
+            `,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <NextTopLoader height={4} color="#FF0000" showSpinner={false} />
         <Provider />
+        <IntroLoader />
         <DisclaimerModal />
         <PublicChrome>
           <Navbar />

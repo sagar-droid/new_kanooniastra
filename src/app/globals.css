@@ -7,8 +7,9 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   /* --primary-color: #8B1E2D; */
-  --primary-color: #D10000;
+  /* --primary-color: #D10000; */
   /* --primary-color: #cd001a; */
+   --primary-color: 209 0 0;
 
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -16,3 +17,13 @@
 .container {
   @apply max-w-[1200px] mx-auto px-5 md:px-10 xl:px-0;
 }
+
+/* Intro splash loader styles to eliminate flash of homepage before loader */
+html:not(.intro-pending) #intro-splash-screen {
+  display: none !important;
+}
+html.intro-pending body {
+  overflow: hidden !important;
+}
+
+
