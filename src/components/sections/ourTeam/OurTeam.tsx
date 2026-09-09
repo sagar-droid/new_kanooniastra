@@ -19,11 +19,12 @@ const TeamMember = ({ id, name, image, designation, email }: TeamMemberCardProps
       data-aos="fade-up"
       data-aos-once="true"
       data-aos-delay={id * 100 + 100}>
-      <div className="relative w-full h-48 overflow-hidden">
+      <div className="relative w-full aspect-square overflow-hidden">
         <Image
           src={image}
           alt={name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           style={{ objectFit: "cover", objectPosition: "center top" }}
           className="rounded-t-lg"
         />
