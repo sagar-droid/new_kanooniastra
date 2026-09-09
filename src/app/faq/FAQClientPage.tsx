@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { FiSearch, FiPhone, FiMail, FiMapPin, FiClock, FiMessageSquare } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaWhatsapp } from "react-icons/fa";
 
 export interface FAQItem {
   id: string;
@@ -318,7 +319,8 @@ const FAQClientPage = ({ initialFaqs }: FAQClientPageProps) => {
                 href="https://wa.me/9867350369"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-base transition-all duration-200 shadow-sm hover:shadow flex items-center justify-center gap-2">
+                className="w-full text-center py-3.5 px-6 rounded-xl bg-transparent hover:bg-emerald-50 text-emerald-600 hover:text-emerald-700 border border-emerald-600 font-semibold text-base transition-all duration-200 flex items-center justify-center gap-2">
+                <FaWhatsapp className="text-xl" />
                 Chat on WhatsApp
               </a>
             </div>

@@ -26,7 +26,7 @@ const TopBar = () => {
             Sun - Fri: 09:30 AM - 06:00 PM
           </span>
         </div>
-        <div className="flex items-center gap-4">
+        {/* <div className="flex items-center gap-4">
           <a href="#" className="hover:text-primary">
             Client Portal
           </a>
@@ -39,7 +39,7 @@ const TopBar = () => {
             Global (EN)
             <IoIosArrowDown className="text-xs" />
           </span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
