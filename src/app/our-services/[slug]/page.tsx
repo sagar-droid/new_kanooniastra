@@ -14,9 +14,45 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { services } from "../../../../data/services";
+import { connectToDatabase } from "@/lib/mongodb";
+import ServiceModel from "@/models/Service";
+
+export const revalidate = 3600;
+
+interface UnifiedService {
+  id: string;
+  title: string;
+  intro: string;
+  description: string[];
+  images: string;
+}
+
+async function getAllPublishedServices(): Promise<UnifiedService[]> {
+  try {
+    await connectToDatabase();
+    const dbServices = await ServiceModel.find({ status: "published" })
+      .sort({ displayOrder: 1, createdAt: 1 })
+      .lean();
+
+    if (dbServices && dbServices.length > 0) {
+      return dbServices.map((s) => ({
+        id: s.slug,
+        title: s.title,
+        intro: s.intro,
+        description: s.description || [],
+        images: s.image?.url || "/fdi.jpeg",
+      }));
+    }
+  } catch (error) {
+    console.error("Failed to query ServiceModel, falling back to static services", error);
+  }
+
+  return services;
+}
 
 export async function generateStaticParams() {
-  return services.map((service) => ({ slug: service.id }));
+  const allServices = await getAllPublishedServices();
+  return allServices.map((service) => ({ slug: service.id }));
 }
 
 export async function generateMetadata({
@@ -24,7 +60,8 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const service = services.find((s) => s.id === params.slug);
+  const allServices = await getAllPublishedServices();
+  const service = allServices.find((s) => s.id === params.slug);
 
   if (!service) {
     return { title: "Service Not Found" };
@@ -42,14 +79,15 @@ export async function generateMetadata({
   };
 }
 
-const ServicePage = ({ params }: { params: { slug: string } }) => {
-  const service = services.find((s) => s.id === params.slug);
+const ServicePage = async ({ params }: { params: { slug: string } }) => {
+  const allServices = await getAllPublishedServices();
+  const service = allServices.find((s) => s.id === params.slug);
 
   if (!service) {
     notFound();
   }
 
-  const relatedServices = services
+  const relatedServices = allServices
     .filter((s) => s.id !== service.id)
     .slice(0, 3);
 

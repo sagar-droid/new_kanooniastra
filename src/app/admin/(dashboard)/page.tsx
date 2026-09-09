@@ -8,6 +8,7 @@ import TeamMemberModel from "@/models/TeamMember";
 import TestimonialModel from "@/models/Testimonial";
 import FAQModel from "@/models/FAQ";
 import PageModel from "@/models/Page";
+import ServiceModel from "@/models/Service";
 import LogoutButton from "./LogoutButton";
 
 export const metadata: Metadata = {
@@ -19,8 +20,9 @@ const AdminHomePage = async () => {
   const session = await getSessionUser();
   await connectToDatabase();
 
-  const [blogPosts, caseStudies, teamMembers, pendingTestimonials, faqs, pages] =
+  const [services, blogPosts, caseStudies, teamMembers, pendingTestimonials, faqs, pages] =
     await Promise.all([
+      ServiceModel.countDocuments(),
       BlogPostModel.countDocuments(),
       CaseStudyModel.countDocuments(),
       TeamMemberModel.countDocuments(),
@@ -30,6 +32,7 @@ const AdminHomePage = async () => {
     ]);
 
   const stats = [
+    { label: "Legal Services", count: services, href: "/admin/services" },
     { label: "Blog Posts", count: blogPosts, href: "/admin/blog" },
     { label: "Case Studies", count: caseStudies, href: "/admin/case-studies" },
     { label: "Team Members", count: teamMembers, href: "/admin/team-members" },

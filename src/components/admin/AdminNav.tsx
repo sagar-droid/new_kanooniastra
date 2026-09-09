@@ -6,6 +6,9 @@ const AdminNav = () => {
       <Link href="/admin" className="font-medium text-gray-700 hover:text-primary">
         Dashboard
       </Link>
+      <Link href="/admin/services" className="font-medium text-gray-700 hover:text-primary">
+        Services
+      </Link>
       <Link href="/admin/blog" className="font-medium text-gray-700 hover:text-primary">
         Blog Posts
       </Link>

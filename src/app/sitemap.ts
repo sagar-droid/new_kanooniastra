@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
-import { services } from "../../data/services";
+import { services as fallbackServices } from "../../data/services";
 import { connectToDatabase } from "@/lib/mongodb";
+import ServiceModel from "@/models/Service";
 import TeamMemberModel from "@/models/TeamMember";
 import BlogPostModel from "@/models/BlogPost";
 import CaseStudyModel from "@/models/CaseStudy";
@@ -26,18 +27,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/faq`, changeFrequency: "monthly", priority: 0.6 },
   ];
 
-  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
-    url: `${baseUrl}/our-services/${service.id}`,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-
-  const [teamMembers, blogPosts, caseStudies, pages] = await Promise.all([
+  const [dbServices, teamMembers, blogPosts, caseStudies, pages] = await Promise.all([
+    ServiceModel.find({ status: "published" }).select("slug updatedAt").lean(),
     TeamMemberModel.find({ status: "published" }).select("slug").lean(),
     BlogPostModel.find({ status: "published" }).select("slug updatedAt").lean(),
     CaseStudyModel.find({ status: "published" }).select("slug updatedAt").lean(),
     PageModel.find({ status: "published" }).select("slug updatedAt").lean(),
   ]);
+
+  const serviceList =
+    dbServices.length > 0
+      ? dbServices.map((s) => ({ slug: s.slug, updatedAt: s.updatedAt }))
+      : fallbackServices.map((s) => ({ slug: s.id, updatedAt: undefined }));
+
+  const serviceRoutes: MetadataRoute.Sitemap = serviceList.map((service) => ({
+    url: `${baseUrl}/our-services/${service.slug}`,
+    lastModified: service.updatedAt,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   const teamRoutes: MetadataRoute.Sitemap = teamMembers.map((member) => ({
     url: `${baseUrl}/ourteam/${member.slug}`,

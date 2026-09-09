@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { services } from "../../../data/services";
+import { services as fallbackServices } from "../../../data/services";
+import { connectToDatabase } from "@/lib/mongodb";
+import ServiceModel from "@/models/Service";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Our Legal Services in Kathmandu, Nepal",
@@ -23,7 +27,35 @@ const breadcrumbJsonLd = {
   ],
 };
 
-const OurServicesPage = () => {
+async function getPublishedServices() {
+  try {
+    await connectToDatabase();
+    const dbServices = await ServiceModel.find({ status: "published" })
+      .sort({ displayOrder: 1, createdAt: 1 })
+      .lean();
+
+    if (dbServices && dbServices.length > 0) {
+      return dbServices.map((s) => ({
+        id: s.slug,
+        title: s.title,
+        intro: s.intro,
+        images: s.image?.url || "/fdi.jpeg",
+      }));
+    }
+  } catch (error) {
+    console.error("Failed to query ServiceModel, falling back to static services", error);
+  }
+
+  return fallbackServices.map((s) => ({
+    id: s.id,
+    title: s.title,
+    intro: s.intro,
+    images: s.images,
+  }));
+}
+
+const OurServicesPage = async () => {
+  const services = await getPublishedServices();
   return (
     <div className=" min-h-screen py-12">
       <script
