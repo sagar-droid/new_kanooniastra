@@ -49,6 +49,7 @@ const OurTeam = async () => {
     officeLocation: "Head Office",
   })
     .sort({ displayOrder: 1 })
+    .limit(3)
     .lean();
 
   const teamMembers = members.map((member) => ({

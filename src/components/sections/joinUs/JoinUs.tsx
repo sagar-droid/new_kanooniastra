@@ -13,7 +13,7 @@ const JoinUs = () => {
             width={700}
             height={700}
             data-aos="fade-right"
-            data-aaos-once="true"
+            data-aos-once="true"
           />
         </div>
         <div

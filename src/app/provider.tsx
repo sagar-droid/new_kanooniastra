@@ -8,7 +8,7 @@ const Provider = () => {
   useEffect(() => {
     AOS.init({
       offset: 120,
-      delay: 400,
+      delay: 200,
       duration: 700,
       easing: "ease",
       // once:true,

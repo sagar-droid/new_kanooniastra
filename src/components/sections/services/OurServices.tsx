@@ -28,6 +28,7 @@ const OurServices = () => {
               href={`/our-services/${service.id}`}
               className="block w-full sm:w-auto"
               data-aos="fade-up"
+              data-aos-once="true"
               data-aos-delay={index * 100}>
               <div className="bg-white group rounded-lg w-full sm:w-[300px] shadow-md p-6 h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-3 group-hover:text-primary transition-colors duration-300">
