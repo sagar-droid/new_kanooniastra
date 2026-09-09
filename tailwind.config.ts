@@ -36,6 +36,10 @@ const config: Config = {
       fontFamily: {
         outline: ["Londrina Outline", "sans-serif"],
       },
+      fontSize: {
+        xs: ["0.8125rem", { lineHeight: "1.25rem" }],
+        sm: ["0.9375rem", { lineHeight: "1.375rem" }],
+      },
     },
   },
   plugins: [daisyui, typography],

@@ -14,6 +14,26 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
+
+html {
+  font-size: 110%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
+body {
+  line-height: 1.6;
+  letter-spacing: 0.012em;
+}
+
 .container {
   @apply max-w-[1200px] mx-auto px-5 md:px-10 xl:px-0;
 }

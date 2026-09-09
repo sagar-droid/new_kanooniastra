@@ -14,7 +14,6 @@ import { connectToDatabase } from "@/lib/mongodb";
 import TeamMemberModel from "@/models/TeamMember";
 import { services } from "../../data/services";
 
-// const inter = Inter({ subsets: ["latin"] });
 const barlow = Barlow_Condensed({
   weight: ["400"],
   subsets: ["latin"],
