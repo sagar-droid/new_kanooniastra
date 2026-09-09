@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { services } from "../../../../data/services";
 
-type MenuLeaf = { title: string; link: string };
+type MenuLeaf = { title: string; link: string; target?: string; rel?: string };
 
 const practiceAreaItems: MenuLeaf[] = services.map((service) => ({
   title: service.title,
@@ -50,7 +50,7 @@ const resourceCenterItems: MenuLeaf[] = [
   },
   {
     title: "Ip Bulletin",
-    link: "https://doind.gov.np/industrial-property-bulletin ",
+    link: "https://doind.gov.np/industrial-property-bulletin",
   },
 ];
 
@@ -129,11 +129,19 @@ const MenuItems = () => {
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2 pointer-events-none"
                 }`}>
-                {entry.items.map((item) => (
-                  <li key={item.title} onClick={handleItemClick}>
-                    <Link href={item.link}>{item.title}</Link>
-                  </li>
-                ))}
+                {entry.items.map((item) => {
+                  const isBlank = item.target === "_blank" || entry.key === "Resource Center";
+                  return (
+                    <li key={item.title} onClick={handleItemClick}>
+                      <Link
+                        href={item.link}
+                        target={isBlank ? "_blank" : item.target}
+                        rel={isBlank ? "noopener noreferrer" : item.rel}>
+                        {item.title}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </>
           ) : (
