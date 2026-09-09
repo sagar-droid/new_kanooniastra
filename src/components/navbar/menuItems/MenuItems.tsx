@@ -113,9 +113,9 @@ const MenuItems = () => {
               <div
                 tabIndex={0}
                 role="button"
-                className="flex gap-2 items-center cursor-pointer"
+                className="flex gap-2 items-center cursor-pointer py-1"
                 onClick={(e) => handleDropdownToggle(entry.key, e)}>
-                {entry.key}
+                <span>{entry.key}</span>
                 <span
                   className={`flex items-center transition-transform duration-200 lg:group-hover:rotate-180 ${
                     activeDropdown === entry.key ? "rotate-180" : ""
@@ -124,7 +124,7 @@ const MenuItems = () => {
                 </span>
               </div>
               <ul
-                className={`absolute dropdown-content normal-case text-black text-base menu bg-base-100 rounded-box z-[99999] w-72 max-h-96 overflow-y-auto p-2 shadow-lg transition-all duration-200 ease-out origin-top lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto ${
+                className={`absolute top-full left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 mt-1 dropdown-content normal-case text-gray-800 text-sm font-normal bg-white rounded-xl z-[99999] w-72 sm:w-80 max-w-[90vw] max-h-80 overflow-y-auto overflow-x-hidden p-2 shadow-xl border border-gray-100 flex flex-col flex-nowrap custom-scrollbar before:content-[''] before:absolute before:-top-2 before:left-0 before:w-full before:h-2 transition-all duration-200 ease-out origin-top lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto ${
                   activeDropdown === entry.key
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2 pointer-events-none"
@@ -132,11 +132,12 @@ const MenuItems = () => {
                 {entry.items.map((item) => {
                   const isBlank = item.target === "_blank" || entry.key === "Resource Center";
                   return (
-                    <li key={item.title} onClick={handleItemClick}>
+                    <li key={item.title} onClick={handleItemClick} className="w-full flex-shrink-0">
                       <Link
                         href={item.link}
                         target={isBlank ? "_blank" : item.target}
-                        rel={isBlank ? "noopener noreferrer" : item.rel}>
+                        rel={isBlank ? "noopener noreferrer" : item.rel}
+                        className="block w-full px-3.5 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-gray-100 hover:text-primary transition-colors whitespace-normal leading-snug">
                         {item.title}
                       </Link>
                     </li>
