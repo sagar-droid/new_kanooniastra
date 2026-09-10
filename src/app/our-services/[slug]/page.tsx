@@ -360,11 +360,11 @@ const ServicePage = async ({ params }: { params: { slug: string } }) => {
                   <div>
                     <p className="font-semibold text-gray-800 text-xs uppercase tracking-wider">Phone</p>
                     <div className="flex flex-col text-gray-600">
+                      <a href="tel:+9779867350369" className="hover:text-primary transition-colors">
+                        +977 9867350369
+                      </a>
                       <a href="tel:+9779843671048" className="hover:text-primary transition-colors">
                         +977 9843671048
-                      </a>
-                      <a href="tel:+9779844393183" className="hover:text-primary transition-colors">
-                        +977 9844393183
                       </a>
                     </div>
                   </div>

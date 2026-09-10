@@ -40,8 +40,8 @@ const AboutusPage = () => {
           <p>
             Welcome to Kanooni Astra, a beacon of legal excellence forged by
             passion and commitment. Founded on December 5th, 2022, by Adv.
-            Praveen Bhattarai and his dedicated colleagues, Adv. Rochak Dhungel
-            and Sita Bashyal, stand as a testament to the power of youth and
+            Praveen Bhattarai and his dedicated colleagues, Adv. Sita Bashyal
+            and Adv. Rochak Dhungel, stand as a testament to the power of youth and
             innovation in the legal field.
             <br />
             <br /> Driven by a shared enthusiasm for justice and a relentless

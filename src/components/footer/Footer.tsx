@@ -34,17 +34,17 @@ const Footer = () => {
             <ul className=" flex flex-col text-xl mt-10 gap-4">
               <li>
                 Phone no:{" "}
+                <a href="tel:+9779867350369" className=" hover:underline">
+                  +977 9867350369
+                </a>,{" "}
                 <a href="tel:+9779843671048" className=" hover:underline">
-                  +977 9843671048
+                  9843671048
                 </a>
                 ,{" "}
                 <a href="tel:+9779844393183" className=" hover:underline">
                   9844393183
                 </a>
-                ,{" "}
-                <a href="tel:+9779867350369" className=" hover:underline">
-                  9867350369
-                </a>
+
               </li>
               <li>
                 Email:{" "}
@@ -57,17 +57,17 @@ const Footer = () => {
               <li>Address: Ghattekulo marg, Kathmandu, Nepal.</li>
               <li className=" flex gap-6">
                 <span>
-                  <Link href="https://www.facebook.com/KanooniAstra">
+                  <Link href="https://www.facebook.com/KanooniAstra" target="_blank">
                     <FaFacebook />
                   </Link>
                 </span>
                 <span>
-                  <Link href="https://www.linkedin.com/company/kanooni-astra">
+                  <Link href="https://www.linkedin.com/company/kanooni-astra" target="_blank">
                     <BsLinkedin />
                   </Link>
                 </span>
                 <span>
-                  <Link href="https://www.instagram.com/kanooni_astra/?hl=en">
+                  <Link href="https://www.instagram.com/kanooni_astra/?hl=en" target="_blank">
                     <BsInstagram />
                   </Link>
                 </span>
