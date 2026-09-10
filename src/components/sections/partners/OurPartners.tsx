@@ -19,6 +19,10 @@ const OurPartners = () => {
     { id: 13, name: "Partner 13", logo: "/partner13.jpg" },
     { id: 14, name: "Partner 14", logo: "/partner14.jpg" },
     { id: 15, name: "Partner 15", logo: "/partner15.jpg" },
+    { id: 16, name: "Partner 16", logo: "/partner16.jpg" },
+    { id: 17, name: "Partner 17", logo: "/partner17.jpg" },
+    { id: 18, name: "Partner 18", logo: "/partner18.jpg" },
+
   ];
 
   return (
@@ -30,7 +34,7 @@ const OurPartners = () => {
         Our Happy Clients
       </h2>
       {/* First row of logos */}
-      <div className="flex py-24 animate-marquee whitespace-nowrap">
+      <div className="flex py-24 animate-marquee whitespace-nowrap hover:[animation-play-state:paused]">
         {partners.map((partner) => (
           <Image
             key={`first-${partner.id}`}
@@ -38,7 +42,7 @@ const OurPartners = () => {
             alt={partner.name}
             width={100}
             height={100}
-            className="h-32 w-40 mx-8 inline-block"
+            className="h-32 w-40 mx-8 inline-block object-contain transition-transform duration-300 hover:scale-105 cursor-pointer"
           />
         ))}
         {partners.map((partner) => (
@@ -48,7 +52,7 @@ const OurPartners = () => {
             alt={partner.name}
             width={100}
             height={100}
-            className="h-32 w-40 mx-8 inline-block"
+            className="h-32 w-40 mx-8 inline-block object-contain transition-transform duration-300 hover:scale-105 cursor-pointer"
           />
         ))}
       </div>
