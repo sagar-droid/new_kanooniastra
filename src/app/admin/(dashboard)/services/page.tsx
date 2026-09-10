@@ -87,92 +87,94 @@ const ServicesAdminPage = async ({ searchParams }: ServicesPageProps) => {
       </form>
 
       <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-gray-50 text-gray-600 border-b border-gray-100">
-            <tr>
-              <th className="px-4 py-3">Service</th>
-              <th className="px-4 py-3">Slug</th>
-              <th className="px-4 py-3">Scope Items</th>
-              <th className="px-4 py-3">Order</th>
-              <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-gray-100">
-            {items.map((item) => (
-              <tr key={String(item._id)} className="hover:bg-gray-50/70 transition-colors">
-                <td className="px-4 py-3.5">
-                  <div className="flex items-center gap-3">
-                    <div className="relative h-10 w-12 flex-shrink-0 overflow-hidden rounded bg-gray-50 border border-gray-200">
-                      {item.image?.url && (
-                        <Image
-                          src={item.image.url}
-                          alt={item.image.alt || item.title}
-                          fill
-                          className="object-contain p-1"
-                        />
-                      )}
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900">{item.title}</p>
-                      <p className="text-xs text-gray-500 line-clamp-1 max-w-xs">{item.intro}</p>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-4 py-3.5 font-mono text-xs text-gray-600">
-                  /our-services/{item.slug}
-                </td>
-                <td className="px-4 py-3.5 text-gray-600">
-                  <span className="rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">
-                    {item.description?.length || 0} items
-                  </span>
-                </td>
-                <td className="px-4 py-3.5 text-gray-600">{item.displayOrder}</td>
-                <td className="px-4 py-3.5">
-                  <span
-                    className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                      item.status === "published"
-                        ? "bg-green-100 text-green-700"
-                        : "bg-yellow-100 text-yellow-700"
-                    }`}
-                  >
-                    {item.status}
-                  </span>
-                </td>
-                <td className="px-4 py-3.5">
-                  <div className="flex items-center gap-3">
-                    <Link
-                      href={`/our-services/${item.slug}`}
-                      target="_blank"
-                      className="text-gray-500 hover:text-primary transition-colors flex items-center gap-1 text-xs"
-                      title="View public page"
-                    >
-                      <FiExternalLink />
-                      <span>View</span>
-                    </Link>
-                    <Link
-                      href={`/admin/services/${item._id}/edit`}
-                      className="text-xs font-semibold text-primary hover:underline"
-                    >
-                      Edit
-                    </Link>
-                    <DeleteButton
-                      endpoint={`/api/admin/services/${item._id}`}
-                      confirmMessage={`Delete "${item.title}" service? This will remove it from the website.`}
-                    />
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {items.length === 0 && (
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[700px] text-left text-sm">
+            <thead className="bg-gray-50 text-gray-600 border-b border-gray-100">
               <tr>
-                <td colSpan={6} className="px-4 py-8 text-center text-gray-500">
-                  No services found matching your criteria.
-                </td>
+                <th className="px-4 py-3 whitespace-nowrap">Service</th>
+                <th className="px-4 py-3 whitespace-nowrap">Slug</th>
+                <th className="px-4 py-3 whitespace-nowrap">Scope Items</th>
+                <th className="px-4 py-3 whitespace-nowrap">Order</th>
+                <th className="px-4 py-3 whitespace-nowrap">Status</th>
+                <th className="px-4 py-3 whitespace-nowrap">Actions</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {items.map((item) => (
+                <tr key={String(item._id)} className="hover:bg-gray-50/70 transition-colors">
+                  <td className="px-4 py-3.5">
+                    <div className="flex items-center gap-3">
+                      <div className="relative h-10 w-12 flex-shrink-0 overflow-hidden rounded bg-gray-50 border border-gray-200">
+                        {item.image?.url && (
+                          <Image
+                            src={item.image.url}
+                            alt={item.image.alt || item.title}
+                            fill
+                            className="object-contain p-1"
+                          />
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-gray-900">{item.title}</p>
+                        <p className="text-xs text-gray-500 line-clamp-1 max-w-xs">{item.intro}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-4 py-3.5 font-mono text-xs text-gray-600 whitespace-nowrap">
+                    /our-services/{item.slug}
+                  </td>
+                  <td className="px-4 py-3.5 text-gray-600 whitespace-nowrap">
+                    <span className="rounded-md bg-gray-100 px-2 py-1 text-xs font-medium text-gray-700">
+                      {item.description?.length || 0} items
+                    </span>
+                  </td>
+                  <td className="px-4 py-3.5 text-gray-600 whitespace-nowrap">{item.displayOrder}</td>
+                  <td className="px-4 py-3.5 whitespace-nowrap">
+                    <span
+                      className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                        item.status === "published"
+                          ? "bg-green-100 text-green-700"
+                          : "bg-yellow-100 text-yellow-700"
+                      }`}
+                    >
+                      {item.status}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3.5 whitespace-nowrap">
+                    <div className="flex items-center gap-3">
+                      <Link
+                        href={`/our-services/${item.slug}`}
+                        target="_blank"
+                        className="text-gray-500 hover:text-primary transition-colors flex items-center gap-1 text-xs"
+                        title="View public page"
+                      >
+                        <FiExternalLink />
+                        <span>View</span>
+                      </Link>
+                      <Link
+                        href={`/admin/services/${item._id}/edit`}
+                        className="text-xs font-semibold text-primary hover:underline"
+                      >
+                        Edit
+                      </Link>
+                      <DeleteButton
+                        endpoint={`/api/admin/services/${item._id}`}
+                        confirmMessage={`Delete "${item.title}" service? This will remove it from the website.`}
+                      />
+                    </div>
+                  </td>
+                </tr>
+              ))}
+              {items.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="px-4 py-8 text-center text-gray-500">
+                    No services found matching your criteria.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {totalPages > 1 && (

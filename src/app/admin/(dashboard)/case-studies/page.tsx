@@ -85,60 +85,62 @@ const CaseStudiesPage = async ({ searchParams }: CaseStudiesPageProps) => {
       </form>
 
       <div className="overflow-hidden rounded-md border border-gray-200 bg-white">
-        <table className="w-full text-left text-sm">
-          <thead className="bg-gray-50 text-gray-600">
-            <tr>
-              <th className="px-4 py-3">Title</th>
-              <th className="px-4 py-3">Practice Area</th>
-              <th className="px-4 py-3">Status</th>
-              <th className="px-4 py-3">Updated</th>
-              <th className="px-4 py-3">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((item) => (
-              <tr key={String(item._id)} className="border-t border-gray-100">
-                <td className="px-4 py-3 font-medium text-gray-900">{item.title}</td>
-                <td className="px-4 py-3 text-gray-600">{item.practiceArea}</td>
-                <td className="px-4 py-3">
-                  <span
-                    className={`rounded-full px-2 py-1 text-xs ${
-                      item.status === "published"
-                        ? "bg-green-100 text-green-700"
-                        : "bg-yellow-100 text-yellow-700"
-                    }`}
-                  >
-                    {item.status}
-                  </span>
-                </td>
-                <td className="px-4 py-3 text-gray-600">
-                  {new Date(item.updatedAt).toLocaleDateString()}
-                </td>
-                <td className="px-4 py-3">
-                  <div className="flex gap-3">
-                    <Link
-                      href={`/admin/case-studies/${item._id}/edit`}
-                      className="text-sm text-primary hover:underline"
-                    >
-                      Edit
-                    </Link>
-                    <DeleteButton
-                      endpoint={`/api/admin/case-studies/${item._id}`}
-                      confirmMessage={`Delete "${item.title}"? This cannot be undone.`}
-                    />
-                  </div>
-                </td>
-              </tr>
-            ))}
-            {items.length === 0 && (
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[600px] text-left text-sm">
+            <thead className="bg-gray-50 text-gray-600">
               <tr>
-                <td colSpan={5} className="px-4 py-6 text-center text-gray-500">
-                  No case studies found.
-                </td>
+                <th className="px-4 py-3 whitespace-nowrap">Title</th>
+                <th className="px-4 py-3 whitespace-nowrap">Practice Area</th>
+                <th className="px-4 py-3 whitespace-nowrap">Status</th>
+                <th className="px-4 py-3 whitespace-nowrap">Updated</th>
+                <th className="px-4 py-3 whitespace-nowrap">Actions</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {items.map((item) => (
+                <tr key={String(item._id)} className="border-t border-gray-100">
+                  <td className="px-4 py-3 font-medium text-gray-900">{item.title}</td>
+                  <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{item.practiceArea}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <span
+                      className={`rounded-full px-2 py-1 text-xs ${
+                        item.status === "published"
+                          ? "bg-green-100 text-green-700"
+                          : "bg-yellow-100 text-yellow-700"
+                      }`}
+                    >
+                      {item.status}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
+                    {new Date(item.updatedAt).toLocaleDateString()}
+                  </td>
+                  <td className="px-4 py-3 whitespace-nowrap">
+                    <div className="flex gap-3">
+                      <Link
+                        href={`/admin/case-studies/${item._id}/edit`}
+                        className="text-sm text-primary hover:underline"
+                      >
+                        Edit
+                      </Link>
+                      <DeleteButton
+                        endpoint={`/api/admin/case-studies/${item._id}`}
+                        confirmMessage={`Delete "${item.title}"? This cannot be undone.`}
+                      />
+                    </div>
+                  </td>
+                </tr>
+              ))}
+              {items.length === 0 && (
+                <tr>
+                  <td colSpan={5} className="px-4 py-6 text-center text-gray-500">
+                    No case studies found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {totalPages > 1 && (

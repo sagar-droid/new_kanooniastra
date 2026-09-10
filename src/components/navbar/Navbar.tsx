@@ -46,13 +46,11 @@ const Navbar = () => {
         className="hidden lg:block fixed top-0 left-0 w-full z-50">
         {!isScrolled && <TopBar />}
         <section
-          className={`w-full transition-colors duration-300 ${
-            transparent ? "bg-transparent" : "bg-white shadow-md"
-          }`}>
-          <article
-            className={`container py-4 flex gap-10 items-center transition-colors duration-300 ${
-              transparent ? "text-white" : "text-black"
+          className={`w-full transition-colors duration-300 ${transparent ? "bg-transparent" : "bg-white shadow-md"
             }`}>
+          <article
+            className={`container py-4 flex gap-10 items-center transition-colors duration-300 ${transparent ? "text-white" : "text-black"
+              }`}>
             <div>
               <Link href="/">
                 <Image
