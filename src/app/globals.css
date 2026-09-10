@@ -66,4 +66,14 @@ html.intro-pending body {
   scrollbar-color: #d1d5db #f3f4f6;
 }
 
+/* Utility to hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
 
